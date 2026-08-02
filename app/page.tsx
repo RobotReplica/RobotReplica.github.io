@@ -8,8 +8,8 @@ const sites = [
     location: "Richardson, Texas",
     robot: "SO-101",
     benchmark: "RobotReplica SO-101 site",
-    image: "/vla-overview.jpg",
-    imageAlt: "SO-101 arm in the VLA-Replica benchmark setup",
+    image: null,
+    imageAlt: "",
     description:
       "A hosted SO-101 evaluation site operated by IRVL at The University of Texas at Dallas.",
     facts: ["SO-101 arm", "UT Dallas", "Accepting evaluations"],
@@ -74,8 +74,8 @@ export default function Home() {
           </div>
         </div>
         <figure className="heroVisual">
-          <img src="/vla-overview.jpg" alt="VLA-Replica physical benchmark setup and tasks" />
-          <figcaption><span>FOUNDING SITE / IRVL @ UT DALLAS</span><span>SO-101</span></figcaption>
+          <img src="/og-network.png" alt="RobotReplica network connecting physical robot evaluation sites" />
+          <figcaption><span>A DISTRIBUTED PHYSICAL BENCHMARK NETWORK</span><span>MULTIPLE ROBOTS</span></figcaption>
         </figure>
       </header>
 
@@ -110,7 +110,10 @@ export default function Home() {
         <div className="siteStack">
           {sites.map((site) => (
             <article className="siteCard" key={site.robot}>
-              <div className="siteImage"><img src={site.image} alt={site.imageAlt} /><span>{site.number}</span></div>
+              <div className={`siteImage${site.image ? "" : " siteIdentity"}`}>
+                {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>IRVL / UT DALLAS</small></div>}
+                <span>{site.number}</span>
+              </div>
               <div className="siteInfo">
                 <div className="siteStatus"><span className={site.status === "Accepting evaluations" ? "live" : "planned"}>● {site.status}</span><span>{site.location}</span></div>
                 <p className="host">{site.host}</p>
