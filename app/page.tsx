@@ -4,7 +4,7 @@ const sites = [
   {
     number: "SITE 01",
     status: "Accepting evaluations",
-    host: "IRVL @ UT Dallas",
+    host: "Intelligent Robotics and Vision Lab @ UT Dallas",
     location: "Richardson, Texas",
     robot: "SO-101",
     benchmark: "RobotReplica SO-101 site",
@@ -12,8 +12,13 @@ const sites = [
     imageAlt: "Black SO-101 follower robot arm with LeRobot branding",
     imageCredit: ["Image: Hugging Face LeRobot", "https://huggingface.co/docs/lerobot/so101"],
     description:
-      "A hosted SO-101 evaluation site operated by IRVL at The University of Texas at Dallas.",
+      "A hosted SO-101 evaluation site operated by the Intelligent Robotics and Vision Lab at The University of Texas at Dallas.",
     facts: ["SO-101 arm", "UT Dallas", "Accepting evaluations"],
+    maintainers: [
+      { name: "Alex S. Huang", image: "/maintainer-alex-huang.jpg", url: "https://alexhuang1029.github.io/" },
+      { name: "Jiahui Zhang", image: "/maintainer-jiahui-zhang.png", url: "https://jiahui-3205.github.io/" },
+      { name: "Yu Xiang", image: "/maintainer-yu-xiang.jpg", url: "https://yuxng.github.io/" },
+    ],
     primary: ["Site details", "/vla-replica"],
     secondary: [
       "Request evaluation",
@@ -33,6 +38,9 @@ const sites = [
     description:
       "A new hosted benchmark for the open-source OpenArm platform, extending the network to larger, bimanual, contact-rich manipulation.",
     facts: ["Bimanual platform", "Open-source hardware", "Protocol in development"],
+    maintainers: [
+      { name: "Shumo Chu", image: "/maintainer-shumo-chu.jpg", url: "https://www.shumochu.com/" },
+    ],
     primary: ["Meet the host", "https://www.gilabs.xyz/"],
     secondary: ["Explore OpenArm", "https://openarm.dev/"],
   },
@@ -43,6 +51,16 @@ const steps = [
   ["2", "Contact the site", "Share your policy, interface requirements, and the benchmark track you want to enter."],
   ["3", "We run the evaluation", "The host executes your policy on its maintained setup under a standardized protocol."],
   ["4", "Compare the result", "Your verified score is added to the leaderboard for that site and robot."],
+];
+
+const so101Leaderboard = [
+  { policy: "π₀.₅", id: "54%", ood: "35%" },
+  { policy: "π₀", id: "34%", ood: "30%" },
+  { policy: "SmolVLA", id: "26%", ood: "30%" },
+  { policy: "ACT", id: "18%", ood: "7.5%" },
+  { policy: "DiT-D", id: "16%", ood: "5%" },
+  { policy: "X-VLA", id: "14%", ood: "7.5%" },
+  { policy: "DiT-F", id: "12%", ood: "2.5%" },
 ];
 
 export default function Home() {
@@ -111,9 +129,10 @@ export default function Home() {
         </div>
         <div className="siteStack">
           {sites.map((site) => (
-            <article className="siteCard" key={site.robot}>
+            <div className="siteEntry" key={site.robot}>
+            <article className="siteCard">
               <div className={`siteImage${site.image ? " hasImage" : " siteIdentity"}`}>
-                {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>IRVL / UT DALLAS</small></div>}
+                {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>INTELLIGENT ROBOTICS AND VISION LAB / UT DALLAS</small></div>}
                 <span>{site.number}</span>
                 {site.imageCredit ? <a className="imageCredit" href={site.imageCredit[1]}>{site.imageCredit[0]} <Arrow /></a> : null}
               </div>
@@ -124,12 +143,39 @@ export default function Home() {
                 <p className="benchmarkName">{site.benchmark}</p>
                 <p className="siteDescription">{site.description}</p>
                 <ul>{site.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
+                <div className="maintainers">
+                  <p>Site maintainers</p>
+                  <div className="maintainerList">
+                    {site.maintainers.map((person) => (
+                      <a className="maintainer" href={person.url} key={person.name} target="_blank" rel="noreferrer">
+                        <img src={person.image} alt={`${person.name}, maintainer of the ${site.robot} site`} />
+                        <span><b>{person.name}</b><small>Profile <Arrow /></small></span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
                 <div className="siteActions">
                   <a className="button primary" href={site.primary[1]}>{site.primary[0]} <Arrow /></a>
                   <a className="button outline" href={site.secondary[1]}>{site.secondary[0]} <Arrow /></a>
                 </div>
               </div>
             </article>
+            {site.robot === "SO-101" ? (
+              <section className="siteLeaderboard" id="leaderboards" aria-labelledby="so101-leaderboard-title">
+                <div className="leaderboardIntro">
+                  <div><p className="eyebrow">LIVE LEADERBOARD</p><h3 id="so101-leaderboard-title">SO-101 · VLA-Replica</h3></div>
+                  <p>Average policy success rates across the official benchmark. Ranked by the in-distribution result.</p>
+                </div>
+                <div className="leaderboardTableWrap">
+                  <table>
+                    <thead><tr><th>Rank</th><th>Policy</th><th>VLA-Replica-ID</th><th>VLA-Replica-OOD</th></tr></thead>
+                    <tbody>{so101Leaderboard.map((result, index) => <tr key={result.policy}><td>{String(index + 1).padStart(2, "0")}</td><th scope="row">{result.policy}</th><td>{result.id}</td><td>{result.ood}</td></tr>)}</tbody>
+                  </table>
+                </div>
+                <div className="leaderboardFoot"><span>Success rate · 5 runs per task</span><a href="https://irvlutd.github.io/VLAReplica/#leaderboard">Full results and evaluation videos <Arrow /></a></div>
+              </section>
+            ) : null}
+            </div>
           ))}
         </div>
       </section>
@@ -146,19 +192,6 @@ export default function Home() {
             ))}
           </div>
           <p className="processNote">Evaluation details—policy interface, checkpoints, task coverage, and reporting—are coordinated directly with the selected host site.</p>
-        </div>
-      </section>
-
-      <section className="leaderboards" id="leaderboards">
-        <div className="shell">
-          <div className="sectionHeading row light">
-            <div><p className="eyebrow">LEADERBOARDS</p><h2>Results grouped by<br /><em>robot and site.</em></h2></div>
-            <p>A score is meaningful only when the embodiment and physical protocol match. RobotReplica keeps those contexts explicit.</p>
-          </div>
-          <div className="boards">
-            <a href="https://irvlutd.github.io/VLAReplica/#leaderboard"><span className="boardRobot">SO-101</span><span><b>VLA-Replica</b><small>IRVL @ UT Dallas</small></span><span className="boardState live">LIVE</span><span>View leaderboard <Arrow /></span></a>
-            <div><span className="boardRobot">OpenArm</span><span><b>RobotReplica OpenArm</b><small>General Intelligence Labs</small></span><span className="boardState planned">IN DEVELOPMENT</span><span>Coming soon</span></div>
-          </div>
         </div>
       </section>
 
