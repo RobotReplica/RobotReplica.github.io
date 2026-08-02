@@ -53,14 +53,10 @@ const steps = [
   ["4", "Compare the result", "Your verified score is added to the leaderboard for that site and robot."],
 ];
 
-const so101Leaderboard = [
+const so101Leaders = [
   { policy: "π₀.₅", id: "54%", ood: "35%" },
   { policy: "π₀", id: "34%", ood: "30%" },
   { policy: "SmolVLA", id: "26%", ood: "30%" },
-  { policy: "ACT", id: "18%", ood: "7.5%" },
-  { policy: "DiT-D", id: "16%", ood: "5%" },
-  { policy: "X-VLA", id: "14%", ood: "7.5%" },
-  { policy: "DiT-F", id: "12%", ood: "2.5%" },
 ];
 
 export default function Home() {
@@ -166,13 +162,17 @@ export default function Home() {
                   <div><p className="eyebrow">LIVE LEADERBOARD</p><h3 id="so101-leaderboard-title">SO-101 · VLA-Replica</h3></div>
                   <p>Average policy success rates across the official benchmark. Ranked by the in-distribution result.</p>
                 </div>
-                <div className="leaderboardTableWrap">
-                  <table>
-                    <thead><tr><th>Rank</th><th>Policy</th><th>VLA-Replica-ID</th><th>VLA-Replica-OOD</th></tr></thead>
-                    <tbody>{so101Leaderboard.map((result, index) => <tr key={result.policy}><td>{String(index + 1).padStart(2, "0")}</td><th scope="row">{result.policy}</th><td>{result.id}</td><td>{result.ood}</td></tr>)}</tbody>
-                  </table>
+                <div className="leaderboardTop" aria-label="Top three SO-101 policies">
+                  <div className="leaderboardLabels"><span>Rank / policy</span><span>ID</span><span>OOD</span></div>
+                  {so101Leaders.map((result, index) => (
+                    <div className="leaderRow" key={result.policy}>
+                      <span className="leaderIdentity"><i>{String(index + 1).padStart(2, "0")}</i><b>{result.policy}</b></span>
+                      <span><small>ID</small>{result.id}</span>
+                      <span><small>OOD</small>{result.ood}</span>
+                    </div>
+                  ))}
                 </div>
-                <div className="leaderboardFoot"><span>Success rate · 5 runs per task</span><a href="https://irvlutd.github.io/VLAReplica/#leaderboard">Full results and evaluation videos <Arrow /></a></div>
+                <div className="leaderboardFoot"><span>Top 3 · success rate · 5 runs per task</span><a className="button leaderboardButton" href="https://irvlutd.github.io/VLAReplica/#leaderboard">View full leaderboard <Arrow /></a></div>
               </section>
             ) : null}
             </div>
