@@ -2,146 +2,125 @@ const Arrow = () => <span aria-hidden="true">↗</span>;
 
 const sites = [
   {
-    index: "01",
-    status: "EVALUATION OPEN",
-    city: "RICHARDSON, TEXAS",
+    number: "SITE 01",
+    status: "Accepting evaluations",
     host: "IRVL @ UT Dallas",
+    location: "Richardson, Texas",
     robot: "SO-101",
-    description:
-      "The founding VLA-Replica site: a low-cost, reproducible benchmark with ten real-world manipulation tasks and matched ID/OOD evaluation.",
+    benchmark: "VLA-Replica",
     image: "/vla-overview.jpg",
-    imageAlt: "VLA-Replica SO-101 benchmark platform and task suite",
-    primaryHref: "https://irvlutd.github.io/VLAReplica/",
-    primaryLabel: "Explore VLA-Replica",
-    secondaryHref:
+    imageAlt: "SO-101 arm in the VLA-Replica benchmark setup",
+    description:
+      "The founding RobotReplica site runs the VLA-Replica benchmark: ten real-world manipulation tasks with standardized ID and OOD evaluation scenes.",
+    facts: ["10 manipulation tasks", "ID + OOD tracks", "Low-cost SO-101 setup"],
+    primary: ["View benchmark", "https://irvlutd.github.io/VLAReplica/"],
+    secondary: [
+      "Request evaluation",
       "mailto:alex.huang@utdallas.edu?cc=jiahui.zhang@utdallas.edu&subject=RobotReplica%20SO-101%20evaluation",
-    secondaryLabel: "Request evaluation",
-    meta: ["10 tasks", "ID + OOD", "SO-101"],
+    ],
   },
   {
-    index: "02",
-    status: "SITE IN DEVELOPMENT",
-    city: "SAN FRANCISCO, CALIFORNIA",
+    number: "SITE 02",
+    status: "In development",
     host: "General Intelligence Labs",
+    location: "San Francisco, California",
     robot: "OpenArm",
-    description:
-      "A partner benchmark site for the open-source OpenArm platform, extending RobotReplica toward larger, contact-rich manipulation systems.",
+    benchmark: "RobotReplica OpenArm",
     image: "/openarm-cell.png",
-    imageAlt: "OpenArm standardized robotic evaluation cell",
-    primaryHref: "https://www.gilabs.xyz/",
-    primaryLabel: "Meet GI Labs",
-    secondaryHref: "https://openarm.dev/",
-    secondaryLabel: "Explore OpenArm",
-    meta: ["Bimanual", "Open source", "OpenArm"],
+    imageAlt: "OpenArm standardized evaluation cell",
+    description:
+      "A new hosted benchmark for the open-source OpenArm platform, extending the network to larger, bimanual, contact-rich manipulation.",
+    facts: ["Bimanual platform", "Open-source hardware", "Protocol in development"],
+    primary: ["Meet the host", "https://www.gilabs.xyz/"],
+    secondary: ["Explore OpenArm", "https://openarm.dev/"],
   },
 ];
 
 const steps = [
-  ["01", "Match your robot", "Find the benchmark site running the same embodiment as your policy."],
-  ["02", "Contact the host", "Coordinate interfaces, checkpoints, task coverage, and evaluation logistics."],
-  ["03", "Run standardized tasks", "The host executes your policy under a consistent physical protocol and scene setup."],
-  ["04", "Join the leaderboard", "Results, settings, and evaluation evidence are reported on the robot-specific board."],
+  ["1", "Find your robot", "Choose a site that operates the same robot embodiment as your model or policy."],
+  ["2", "Contact the site", "Share your policy, interface requirements, and the benchmark track you want to enter."],
+  ["3", "We run the evaluation", "The host executes your policy on its maintained setup under a standardized protocol."],
+  ["4", "Compare the result", "Your verified score is added to the leaderboard for that site and robot."],
 ];
 
 export default function Home() {
   return (
-    <main>
+    <main id="top">
       <nav className="nav shell" aria-label="Main navigation">
         <a className="brand" href="#top" aria-label="RobotReplica home">
           <i />ROBOT<span>REPLICA</span>
         </a>
         <div className="navLinks">
-          <a href="#network">Sites</a>
-          <a href="#protocol">How it works</a>
-          <a href="#origin">VLA-Replica</a>
+          <a href="#overview">Overview</a>
+          <a href="#sites">Current sites</a>
+          <a href="#process">How it works</a>
           <a href="#leaderboards">Leaderboards</a>
         </div>
-        <a className="githubLink" href="https://github.com/RobotReplica">
-          GitHub <Arrow />
-        </a>
+        <a className="navCta" href="#sites">Find a site</a>
       </nav>
 
-      <section className="hero shell" id="top">
-        <div className="eyebrow">
-          <span>DISTRIBUTED REAL-WORLD EVALUATION</span>
-          <span>02 ACTIVE PARTNERS / EXPANDING</span>
-        </div>
-        <div className="heroGrid">
-          <div className="heroCopy">
-            <h1>
-              One benchmark<br />network. <em>Many robots.</em>
-            </h1>
-            <p>
-              RobotReplica is a joint effort to make real-world robot manipulation
-              evaluation reproducible, accessible, and comparable across embodiments.
-            </p>
-            <div className="heroActions">
-              <a className="button primary" href="#network">Find your robot <span>↓</span></a>
-              <a className="button secondary" href="https://irvlutd.github.io/VLAReplica/">See the founding benchmark <Arrow /></a>
-            </div>
-          </div>
-          <div className="networkGraphic" aria-hidden="true">
-            <span className="axis axisX" /><span className="axis axisY" />
-            <div className="route" />
-            <div className="node nodeOne"><b>01</b><span>UT DALLAS</span><small>SO-101</small></div>
-            <div className="node nodeTwo"><b>02</b><span>GI LABS</span><small>OPENARM</small></div>
-            <span className="coordinate c1">32.9857° N</span>
-            <span className="coordinate c2">37.7749° N</span>
+      <header className="hero shell">
+        <div className="heroCopy">
+          <p className="kicker">A PHYSICAL BENCHMARK NETWORK FOR ROBOT MANIPULATION</p>
+          <h1>Your policy.<br />Our robot.<br /><em>One comparable result.</em></h1>
+          <p className="heroDefinition">
+            RobotReplica is a network of organizations that host standardized robot
+            manipulation benchmarks. Find a site with the same robot you use, send us
+            your policy, and we evaluate it on maintained real-world tasks.
+          </p>
+          <div className="heroActions">
+            <a className="button primary" href="#sites">View current sites <span>↓</span></a>
+            <a className="button text" href="#process">How evaluation works <Arrow /></a>
           </div>
         </div>
-        <div className="statBar">
-          <div><strong>02</strong><span>benchmark sites</span></div>
-          <div><strong>02</strong><span>robot embodiments</span></div>
-          <div><strong>10</strong><span>founding tasks</span></div>
-          <div><strong>01</strong><span>shared standard</span></div>
-        </div>
-      </section>
+        <figure className="heroVisual">
+          <img src="/vla-overview.jpg" alt="VLA-Replica physical benchmark setup and tasks" />
+          <figcaption><span>FOUNDING SITE / IRVL @ UT DALLAS</span><span>SO-101</span></figcaption>
+        </figure>
+      </header>
 
-      <section className="origin" id="origin">
+      <section className="overview" id="overview">
         <div className="shell">
-          <div className="sectionIntro">
-            <p className="sectionLabel">01 — WHERE IT STARTED</p>
-            <h2>VLA-Replica proved<br />the benchmark can <em>travel.</em></h2>
+          <div className="sectionHeading centered">
+            <p className="eyebrow">OVERVIEW</p>
+            <h2>A shared evaluation service<br />for <em>real robots.</em></h2>
+            <p className="sectionLead">
+              Robotics results are difficult to compare when every lab uses a different
+              robot, scene, and protocol. RobotReplica keeps physical benchmark sites
+              running so the community can evaluate on consistent hardware and tasks.
+            </p>
           </div>
-          <div className="originGrid">
-            <figure className="originImage">
-              <img src="/vla-tasks.png" alt="Ten manipulation tasks in the VLA-Replica benchmark" />
-              <figcaption><span>VLA-REPLICA / SO-101</span><span>10 REAL-WORLD TASKS</span></figcaption>
-            </figure>
-            <div className="originCopy">
-              <p className="lead">A real-world VLA benchmark built from off-the-shelf components, designed to be assembled quickly and reproduced across laboratories.</p>
-              <p>VLA-Replica pairs a low-cost SO-101 arm with standardized cameras, workspace, scenes, and evaluation protocols. It covers both in-distribution and out-of-distribution conditions, with demonstrations and reference scenes that make comparison concrete.</p>
-              <div className="factGrid">
-                <div><strong>&lt; 1 hour</strong><span>demonstrated setup time</span></div>
-                <div><strong>50 / task</strong><span>expert demonstrations</span></div>
-                <div><strong>90</strong><span>test scene references</span></div>
-                <div><strong>ID + OOD</strong><span>evaluation tracks</span></div>
-              </div>
-              <a className="textLink" href="https://irvlutd.github.io/VLAReplica/">Read the VLA-Replica project <Arrow /></a>
-            </div>
+          <div className="overviewGrid">
+            <article><span>01</span><h3>Physical benchmark sites</h3><p>Each partner maintains a robot, workspace, task objects, cameras, and an evaluation protocol.</p></article>
+            <article><span>02</span><h3>Robot-matched evaluation</h3><p>You choose the site with the same robot as your system. The site runs your policy for you.</p></article>
+            <article><span>03</span><h3>Verified leaderboards</h3><p>Every robot and site has its own board, keeping scores comparable and evidence traceable.</p></article>
+          </div>
+          <div className="distinction">
+            <b>THE ROBOTREPLICA MODEL</b>
+            <p>Researchers do not need to rebuild the full benchmark. The benchmark stays at the host site; policies travel to it.</p>
           </div>
         </div>
       </section>
 
-      <section className="network shell" id="network">
-        <div className="sectionIntro split">
-          <p className="sectionLabel">02 — BENCHMARK NETWORK</p>
-          <div><h2>Choose the site<br />that matches <em>your robot.</em></h2><p>Each host maintains a physical robot, standardized tasks, evaluation protocols, and a dedicated leaderboard.</p></div>
+      <section className="sites shell" id="sites">
+        <div className="sectionHeading row">
+          <div><p className="eyebrow">CURRENT SITES</p><h2>Start with the robot<br />you already <em>use.</em></h2></div>
+          <p>Two organizations are building the first RobotReplica sites. Each site owns its hardware, tasks, evaluation process, and robot-specific leaderboard.</p>
         </div>
-        <div className="siteList">
+        <div className="siteStack">
           {sites.map((site) => (
             <article className="siteCard" key={site.robot}>
-              <div className="siteImage"><img src={site.image} alt={site.imageAlt} /></div>
-              <div className="siteContent">
-                <div className="siteTop"><span>{site.index}</span><span className={`status ${site.index === "01" ? "live" : "building"}`}>{site.status}</span></div>
-                <p className="city">{site.city}</p>
-                <h3>{site.host}</h3>
-                <div className="robotName">{site.robot}</div>
+              <div className="siteImage"><img src={site.image} alt={site.imageAlt} /><span>{site.number}</span></div>
+              <div className="siteInfo">
+                <div className="siteStatus"><span className={site.status === "Accepting evaluations" ? "live" : "planned"}>● {site.status}</span><span>{site.location}</span></div>
+                <p className="host">{site.host}</p>
+                <h3>{site.robot}</h3>
+                <p className="benchmarkName">{site.benchmark}</p>
                 <p className="siteDescription">{site.description}</p>
-                <div className="siteMeta">{site.meta.map((item) => <span key={item}>{item}</span>)}</div>
+                <ul>{site.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
                 <div className="siteActions">
-                  <a href={site.primaryHref}>{site.primaryLabel} <Arrow /></a>
-                  <a href={site.secondaryHref}>{site.secondaryLabel} <Arrow /></a>
+                  <a className="button primary" href={site.primary[1]}>{site.primary[0]} <Arrow /></a>
+                  <a className="button outline" href={site.secondary[1]}>{site.secondary[0]} <Arrow /></a>
                 </div>
               </div>
             </article>
@@ -149,41 +128,57 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="protocol" id="protocol">
+      <section className="process" id="process">
         <div className="shell">
-          <div className="sectionIntro split light">
-            <p className="sectionLabel">03 — EVALUATION PATH</p>
-            <h2>From model<br />to measured <em>result.</em></h2>
+          <div className="sectionHeading centered narrow">
+            <p className="eyebrow">HOW IT WORKS</p>
+            <h2>From your model<br />to a <em>verified score.</em></h2>
           </div>
-          <div className="stepGrid">
-            {steps.map(([number, title, text]) => <div className="step" key={number}><span>{number}</span><h3>{title}</h3><p>{text}</p></div>)}
+          <div className="steps">
+            {steps.map(([number, title, description]) => (
+              <article key={number}><span>{number}</span><h3>{title}</h3><p>{description}</p></article>
+            ))}
           </div>
+          <p className="processNote">Evaluation details—policy interface, checkpoints, task coverage, and reporting—are coordinated directly with the selected host site.</p>
         </div>
       </section>
 
-      <section className="leaderboards shell" id="leaderboards">
-        <div className="sectionIntro split">
-          <p className="sectionLabel">04 — LEADERBOARDS</p>
-          <div><h2>One board for<br />every <em>embodiment.</em></h2><p>Results stay tied to the robot and physical site that produced them—so comparisons remain meaningful.</p></div>
+      <section className="origin shell" id="origin">
+        <div className="originImage"><img src="/vla-tasks.png" alt="Ten tasks in the VLA-Replica manipulation benchmark" /></div>
+        <div className="originText">
+          <p className="eyebrow">THE FOUNDATION</p>
+          <h2>From VLA-Replica<br />to <em>RobotReplica.</em></h2>
+          <p>VLA-Replica showed that an affordable SO-101 benchmark could be assembled quickly, reproduced across laboratories, and used for consistent real-world evaluation.</p>
+          <p>RobotReplica expands that idea into a larger network: multiple host organizations, multiple robot embodiments, and one clear path for community evaluation.</p>
+          <div className="miniFacts"><span><b>10</b> founding tasks</span><span><b>50</b> demos per task</span><span><b>ID/OOD</b> evaluation</span></div>
+          <a className="inlineLink" href="https://irvlutd.github.io/VLAReplica/">Explore VLA-Replica <Arrow /></a>
         </div>
-        <div className="boardTable" role="table" aria-label="RobotReplica leaderboards">
-          <div className="boardHead" role="row"><span>Robot / host</span><span>Track</span><span>Status</span><span>Leaderboard</span></div>
-          <a className="boardRow" role="row" href="https://irvlutd.github.io/VLAReplica/#leaderboard"><span><b>SO-101</b><small>IRVL @ UT Dallas</small></span><span>VLA-Replica ID + OOD</span><span className="online">● LIVE</span><span>View board <Arrow /></span></a>
-          <div className="boardRow muted" role="row"><span><b>OpenArm</b><small>General Intelligence Labs</small></span><span>Protocol in development</span><span>○ BUILDING</span><span>Coming soon</span></div>
+      </section>
+
+      <section className="leaderboards" id="leaderboards">
+        <div className="shell">
+          <div className="sectionHeading row light">
+            <div><p className="eyebrow">LEADERBOARDS</p><h2>Results grouped by<br /><em>robot and site.</em></h2></div>
+            <p>A score is meaningful only when the embodiment and physical protocol match. RobotReplica keeps those contexts explicit.</p>
+          </div>
+          <div className="boards">
+            <a href="https://irvlutd.github.io/VLAReplica/#leaderboard"><span className="boardRobot">SO-101</span><span><b>VLA-Replica</b><small>IRVL @ UT Dallas</small></span><span className="boardState live">LIVE</span><span>View leaderboard <Arrow /></span></a>
+            <div><span className="boardRobot">OpenArm</span><span><b>RobotReplica OpenArm</b><small>General Intelligence Labs</small></span><span className="boardState planned">IN DEVELOPMENT</span><span>Coming soon</span></div>
+          </div>
         </div>
       </section>
 
       <section className="join">
-        <div className="shell joinGrid">
-          <p className="sectionLabel">05 — GROW THE NETWORK</p>
-          <div><h2>Have a robot?<br /><em>Host a site.</em></h2><p>RobotReplica grows through organizations willing to maintain a reproducible physical setup and evaluate community policies. Bring a new embodiment into the network.</p><a className="button dark" href="https://github.com/RobotReplica/RobotReplica.github.io/issues/new?title=Benchmark%20site%20proposal">Propose a benchmark site <Arrow /></a></div>
+        <div className="shell joinInner">
+          <div><p className="eyebrow">EXPAND THE NETWORK</p><h2>Operate a robot?<br /><em>Host a site.</em></h2></div>
+          <div><p>We are looking for organizations that can maintain a reproducible robot setup and evaluate community policies. Help bring a new embodiment into RobotReplica.</p><a className="button dark" href="https://github.com/RobotReplica/RobotReplica.github.io/issues/new?title=Benchmark%20site%20proposal">Propose a site <Arrow /></a></div>
         </div>
       </section>
 
       <footer className="footer shell">
-        <div><a className="brand" href="#top"><i />ROBOT<span>REPLICA</span></a><p>A distributed proving ground for robot manipulation.</p></div>
-        <div className="partnerLine"><span>FOUNDING SITE</span><a href="https://labs.utdallas.edu/irvl/">IRVL @ UT Dallas <Arrow /></a><span>NETWORK PARTNER</span><a href="https://www.gilabs.xyz/">General Intelligence Labs <Arrow /></a></div>
-        <div className="footerBottom"><span>© 2026 ROBOTREPLICA</span><span>REAL ROBOTS · SHARED TASKS · COMPARABLE RESULTS</span><a href="#top">BACK TO TOP ↑</a></div>
+        <div><a className="brand" href="#top"><i />ROBOT<span>REPLICA</span></a><p>Real robots. Maintained sites. Comparable results.</p></div>
+        <div className="footerLinks"><a href="https://irvlutd.github.io/VLAReplica/">VLA-Replica</a><a href="https://www.gilabs.xyz/">GI Labs</a><a href="https://openarm.dev/">OpenArm</a><a href="https://github.com/RobotReplica">GitHub</a></div>
+        <div className="footerBottom"><span>© 2026 ROBOTREPLICA</span><span>A JOINT ROBOT MANIPULATION BENCHMARKING EFFORT</span><a href="#top">BACK TO TOP ↑</a></div>
       </footer>
     </main>
   );
