@@ -8,8 +8,9 @@ const sites = [
     location: "Richardson, Texas",
     robot: "SO-101",
     benchmark: "RobotReplica SO-101 site",
-    image: null,
-    imageAlt: "",
+    image: "/so101-follower.webp",
+    imageAlt: "Black SO-101 follower robot arm with LeRobot branding",
+    imageCredit: ["Image: Hugging Face LeRobot", "https://huggingface.co/docs/lerobot/so101"],
     description:
       "A hosted SO-101 evaluation site operated by IRVL at The University of Texas at Dallas.",
     facts: ["SO-101 arm", "UT Dallas", "Accepting evaluations"],
@@ -28,6 +29,7 @@ const sites = [
     benchmark: "RobotReplica OpenArm",
     image: "/openarm-cell.png",
     imageAlt: "OpenArm standardized evaluation cell",
+    imageCredit: null,
     description:
       "A new hosted benchmark for the open-source OpenArm platform, extending the network to larger, bimanual, contact-rich manipulation.",
     facts: ["Bimanual platform", "Open-source hardware", "Protocol in development"],
@@ -113,6 +115,7 @@ export default function Home() {
               <div className={`siteImage${site.image ? " hasImage" : " siteIdentity"}`}>
                 {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>IRVL / UT DALLAS</small></div>}
                 <span>{site.number}</span>
+                {site.imageCredit ? <a className="imageCredit" href={site.imageCredit[1]}>{site.imageCredit[0]} <Arrow /></a> : null}
               </div>
               <div className="siteInfo">
                 <div className="siteStatus"><span className={site.status === "Accepting evaluations" ? "live" : "planned"}>● {site.status}</span><span>{site.location}</span></div>
