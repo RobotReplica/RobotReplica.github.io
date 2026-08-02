@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "VLA-Replica | RobotReplica",
-  description: "The founding SO-101 benchmark behind RobotReplica, developed by IRVL at The University of Texas at Dallas.",
+  description: "The founding SO-101 benchmark behind RobotReplica, developed by the Intelligent Robotics and Vision Lab at The University of Texas at Dallas.",
 };
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -18,7 +18,7 @@ export default function VLAReplicaPage() {
 
       <header className="vlaHero shell">
         <div>
-          <p className="kicker">FOUNDING PROJECT / IRVL @ UT DALLAS</p>
+          <p className="kicker">FOUNDING PROJECT / INTELLIGENT ROBOTICS AND VISION LAB @ UT DALLAS</p>
           <h1>VLA-Replica</h1>
           <p className="vlaSubtitle">A replicable real-world benchmark for vision-language-action models using the low-cost SO-101 arm.</p>
           <div className="heroActions">
@@ -53,7 +53,7 @@ export default function VLAReplicaPage() {
       </section>
 
       <footer className="footer shell vlaFooter">
-        <div><a className="brand" href="/"><i />ROBOT<span>REPLICA</span></a><p>VLA-Replica is maintained by IRVL at UT Dallas.</p></div>
+        <div><a className="brand" href="/"><i />ROBOT<span>REPLICA</span></a><p>VLA-Replica is maintained by the Intelligent Robotics and Vision Lab at UT Dallas.</p></div>
         <div className="footerLinks"><a href="/">RobotReplica home</a><a href="https://irvlutd.github.io/VLAReplica/">Original project</a><a href="https://github.com/RobotReplica">GitHub</a></div>
       </footer>
     </main>

@@ -4,7 +4,7 @@ const sites = [
   {
     number: "SITE 01",
     status: "Accepting evaluations",
-    host: "IRVL @ UT Dallas",
+    host: "Intelligent Robotics and Vision Lab @ UT Dallas",
     location: "Richardson, Texas",
     robot: "SO-101",
     benchmark: "RobotReplica SO-101 site",
@@ -12,7 +12,7 @@ const sites = [
     imageAlt: "Black SO-101 follower robot arm with LeRobot branding",
     imageCredit: ["Image: Hugging Face LeRobot", "https://huggingface.co/docs/lerobot/so101"],
     description:
-      "A hosted SO-101 evaluation site operated by IRVL at The University of Texas at Dallas.",
+      "A hosted SO-101 evaluation site operated by the Intelligent Robotics and Vision Lab at The University of Texas at Dallas.",
     facts: ["SO-101 arm", "UT Dallas", "Accepting evaluations"],
     primary: ["Site details", "/vla-replica"],
     secondary: [
@@ -113,7 +113,7 @@ export default function Home() {
           {sites.map((site) => (
             <article className="siteCard" key={site.robot}>
               <div className={`siteImage${site.image ? " hasImage" : " siteIdentity"}`}>
-                {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>IRVL / UT DALLAS</small></div>}
+                {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>INTELLIGENT ROBOTICS AND VISION LAB / UT DALLAS</small></div>}
                 <span>{site.number}</span>
                 {site.imageCredit ? <a className="imageCredit" href={site.imageCredit[1]}>{site.imageCredit[0]} <Arrow /></a> : null}
               </div>
@@ -156,7 +156,7 @@ export default function Home() {
             <p>A score is meaningful only when the embodiment and physical protocol match. RobotReplica keeps those contexts explicit.</p>
           </div>
           <div className="boards">
-            <a href="https://irvlutd.github.io/VLAReplica/#leaderboard"><span className="boardRobot">SO-101</span><span><b>VLA-Replica</b><small>IRVL @ UT Dallas</small></span><span className="boardState live">LIVE</span><span>View leaderboard <Arrow /></span></a>
+            <a href="https://irvlutd.github.io/VLAReplica/#leaderboard"><span className="boardRobot">SO-101</span><span><b>VLA-Replica</b><small>Intelligent Robotics and Vision Lab @ UT Dallas</small></span><span className="boardState live">LIVE</span><span>View leaderboard <Arrow /></span></a>
             <div><span className="boardRobot">OpenArm</span><span><b>RobotReplica OpenArm</b><small>General Intelligence Labs</small></span><span className="boardState planned">IN DEVELOPMENT</span><span>Coming soon</span></div>
           </div>
         </div>
