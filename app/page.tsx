@@ -7,13 +7,13 @@ const sites = [
     host: "IRVL @ UT Dallas",
     location: "Richardson, Texas",
     robot: "SO-101",
-    benchmark: "VLA-Replica",
+    benchmark: "RobotReplica SO-101 site",
     image: "/vla-overview.jpg",
     imageAlt: "SO-101 arm in the VLA-Replica benchmark setup",
     description:
-      "The founding RobotReplica site runs the VLA-Replica benchmark: ten real-world manipulation tasks with standardized ID and OOD evaluation scenes.",
-    facts: ["10 manipulation tasks", "ID + OOD tracks", "Low-cost SO-101 setup"],
-    primary: ["View benchmark", "https://irvlutd.github.io/VLAReplica/"],
+      "A hosted SO-101 evaluation site operated by IRVL at The University of Texas at Dallas.",
+    facts: ["SO-101 arm", "UT Dallas", "Accepting evaluations"],
+    primary: ["Site details", "/vla-replica"],
     secondary: [
       "Request evaluation",
       "mailto:alex.huang@utdallas.edu?cc=jiahui.zhang@utdallas.edu&subject=RobotReplica%20SO-101%20evaluation",
@@ -143,18 +143,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="origin shell" id="origin">
-        <div className="originImage"><img src="/vla-tasks.png" alt="Ten tasks in the VLA-Replica manipulation benchmark" /></div>
-        <div className="originText">
-          <p className="eyebrow">THE FOUNDATION</p>
-          <h2>From VLA-Replica<br />to <em>RobotReplica.</em></h2>
-          <p>VLA-Replica showed that an affordable SO-101 benchmark could be assembled quickly, reproduced across laboratories, and used for consistent real-world evaluation.</p>
-          <p>RobotReplica expands that idea into a larger network: multiple host organizations, multiple robot embodiments, and one clear path for community evaluation.</p>
-          <div className="miniFacts"><span><b>10</b> founding tasks</span><span><b>50</b> demos per task</span><span><b>ID/OOD</b> evaluation</span></div>
-          <a className="inlineLink" href="https://irvlutd.github.io/VLAReplica/">Explore VLA-Replica <Arrow /></a>
-        </div>
-      </section>
-
       <section className="leaderboards" id="leaderboards">
         <div className="shell">
           <div className="sectionHeading row light">
@@ -177,7 +165,7 @@ export default function Home() {
 
       <footer className="footer shell">
         <div><a className="brand" href="#top"><i />ROBOT<span>REPLICA</span></a><p>Real robots. Maintained sites. Comparable results.</p></div>
-        <div className="footerLinks"><a href="https://irvlutd.github.io/VLAReplica/">VLA-Replica</a><a href="https://www.gilabs.xyz/">GI Labs</a><a href="https://openarm.dev/">OpenArm</a><a href="https://github.com/RobotReplica">GitHub</a></div>
+        <div className="footerLinks"><a href="/vla-replica">VLA-Replica</a><a href="https://www.gilabs.xyz/">GI Labs</a><a href="https://openarm.dev/">OpenArm</a><a href="https://github.com/RobotReplica">GitHub</a></div>
         <div className="footerBottom"><span>© 2026 ROBOTREPLICA</span><span>A JOINT ROBOT MANIPULATION BENCHMARKING EFFORT</span><a href="#top">BACK TO TOP ↑</a></div>
       </footer>
     </main>
