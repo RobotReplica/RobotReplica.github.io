@@ -7,11 +7,11 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://robotreplica.github.io"),
-  title: "RobotReplica — Open Models for Dexterous Intelligence",
-  description: "Open foundation models that help robots see, understand, and reproduce human dexterity.",
+  title: "RobotReplica — A Shared Proving Ground for Robot Manipulation",
+  description: "A distributed network of physical benchmark sites for reproducible, real-world robot manipulation evaluation.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
-  openGraph: { title: "RobotReplica", description: "Teaching machines the shape of human skill.", images: ["/og.png"] },
-  twitter: { card: "summary_large_image", title: "RobotReplica", description: "Teaching machines the shape of human skill.", images: ["/og.png"] },
+  openGraph: { title: "RobotReplica", description: "A shared proving ground for robot manipulation.", images: ["/og-network.png"] },
+  twitter: { card: "summary_large_image", title: "RobotReplica", description: "A shared proving ground for robot manipulation.", images: ["/og-network.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
