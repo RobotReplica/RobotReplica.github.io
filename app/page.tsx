@@ -5,6 +5,7 @@ const sites = [
     number: "SITE 01",
     status: "Accepting evaluations",
     host: "Intelligent Robotics and Vision Lab @ UT Dallas",
+    hostUrl: "https://labs.utdallas.edu/irvl/",
     location: "Richardson, Texas",
     robot: "SO-101",
     benchmark: "RobotReplica SO-101 site",
@@ -29,6 +30,7 @@ const sites = [
     number: "SITE 02",
     status: "In development",
     host: "General Intelligence Labs",
+    hostUrl: "https://www.gilabs.xyz/",
     location: "San Francisco, California",
     robot: "OpenArm",
     benchmark: "RobotReplica OpenArm",
@@ -134,7 +136,7 @@ export default function Home() {
               </div>
               <div className="siteInfo">
                 <div className="siteStatus"><span className={site.status === "Accepting evaluations" ? "live" : "planned"}>● {site.status}</span><span>{site.location}</span></div>
-                <p className="host">{site.host}</p>
+                <p className="host"><a href={site.hostUrl} target="_blank" rel="noreferrer">{site.host} <Arrow /></a></p>
                 <h3>{site.robot}</h3>
                 <p className="benchmarkName">{site.benchmark}</p>
                 <p className="siteDescription">{site.description}</p>
