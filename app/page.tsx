@@ -110,7 +110,7 @@ export default function Home() {
         <div className="siteStack">
           {sites.map((site) => (
             <article className="siteCard" key={site.robot}>
-              <div className={`siteImage${site.image ? "" : " siteIdentity"}`}>
+              <div className={`siteImage${site.image ? " hasImage" : " siteIdentity"}`}>
                 {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>IRVL / UT DALLAS</small></div>}
                 <span>{site.number}</span>
               </div>
