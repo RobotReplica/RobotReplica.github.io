@@ -14,6 +14,11 @@ const sites = [
     description:
       "A hosted SO-101 evaluation site operated by the Intelligent Robotics and Vision Lab at The University of Texas at Dallas.",
     facts: ["SO-101 arm", "UT Dallas", "Accepting evaluations"],
+    maintainers: [
+      { name: "Alex S. Huang", image: "/maintainer-alex-huang.jpg", url: "https://alexhuang1029.github.io/" },
+      { name: "Jiahui Zhang", image: "/maintainer-jiahui-zhang.png", url: "https://jiahui-3205.github.io/" },
+      { name: "Yu Xiang", image: "/maintainer-yu-xiang.jpg", url: "https://yuxng.github.io/" },
+    ],
     primary: ["Site details", "/vla-replica"],
     secondary: [
       "Request evaluation",
@@ -33,6 +38,9 @@ const sites = [
     description:
       "A new hosted benchmark for the open-source OpenArm platform, extending the network to larger, bimanual, contact-rich manipulation.",
     facts: ["Bimanual platform", "Open-source hardware", "Protocol in development"],
+    maintainers: [
+      { name: "Shumo Chu", image: "/maintainer-shumo-chu.jpg", url: "https://www.shumochu.com/" },
+    ],
     primary: ["Meet the host", "https://www.gilabs.xyz/"],
     secondary: ["Explore OpenArm", "https://openarm.dev/"],
   },
@@ -135,6 +143,17 @@ export default function Home() {
                 <p className="benchmarkName">{site.benchmark}</p>
                 <p className="siteDescription">{site.description}</p>
                 <ul>{site.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
+                <div className="maintainers">
+                  <p>Site maintainers</p>
+                  <div className="maintainerList">
+                    {site.maintainers.map((person) => (
+                      <a className="maintainer" href={person.url} key={person.name} target="_blank" rel="noreferrer">
+                        <img src={person.image} alt={`${person.name}, maintainer of the ${site.robot} site`} />
+                        <span><b>{person.name}</b><small>Profile <Arrow /></small></span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
                 <div className="siteActions">
                   <a className="button primary" href={site.primary[1]}>{site.primary[0]} <Arrow /></a>
                   <a className="button outline" href={site.secondary[1]}>{site.secondary[0]} <Arrow /></a>
