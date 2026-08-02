@@ -6,7 +6,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://robotreplica.org"),
+  metadataBase: new URL("https://robotreplica.github.io"),
   title: "RobotReplica — Open Models for Dexterous Intelligence",
   description: "Open foundation models that help robots see, understand, and reproduce human dexterity.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
