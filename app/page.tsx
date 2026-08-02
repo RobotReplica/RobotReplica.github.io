@@ -9,9 +9,9 @@ const sites = [
     location: "Richardson, Texas",
     robot: "SO-101",
     benchmark: "RobotReplica SO-101 site",
-    image: "/so101-follower.webp",
-    imageAlt: "Black SO-101 follower robot arm with LeRobot branding",
-    imageCredit: ["Image: Hugging Face LeRobot", "https://huggingface.co/docs/lerobot/so101"],
+    image: "/vla-replica-overview.jpg",
+    imageAlt: "VLA-Replica SO-101 evaluation setup showing the light box, top camera, camera mount, follower arm, and wrist webcam",
+    imageCredit: null,
     description:
       "A hosted SO-101 evaluation site operated by the Intelligent Robotics and Vision Lab at The University of Texas at Dallas.",
     facts: ["SO-101 arm", "UT Dallas", "Accepting evaluations"],
