@@ -23,7 +23,7 @@ export default function VLAReplicaPage() {
           <p className="vlaSubtitle">A replicable real-world benchmark for vision-language-action models using the low-cost SO-101 arm.</p>
           <div className="heroActions">
             <a className="button primary" href="https://irvlutd.github.io/VLAReplica/">Official project site <Arrow /></a>
-            <a className="button outline" href="mailto:alex.huang@utdallas.edu?cc=jiahui.zhang@utdallas.edu&subject=RobotReplica%20SO-101%20evaluation">Request evaluation <Arrow /></a>
+            <a className="button outline" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20SO-101%20evaluation%20request">Request evaluation <Arrow /></a>
           </div>
         </div>
         <figure className="vlaHeroImage"><img src="/vla-overview.jpg" alt="SO-101 arm and VLA-Replica benchmark workspace" /><figcaption>SO-101 BENCHMARK SITE / RICHARDSON, TEXAS</figcaption></figure>
@@ -48,7 +48,7 @@ export default function VLAReplicaPage() {
       <section className="vlaEvaluation" id="evaluation">
         <div className="shell vlaSplit">
           <div><p className="eyebrow">EVALUATION</p><h2>Evaluate on the UT Dallas SO-101 site.</h2></div>
-          <div className="vlaBody"><p>Researchers with SO-101-compatible manipulation policies can contact the IRVL team to discuss interfaces, checkpoints, task coverage, and evaluation reporting.</p><div className="vlaLinks"><a className="button primary" href="mailto:alex.huang@utdallas.edu?cc=jiahui.zhang@utdallas.edu&subject=RobotReplica%20SO-101%20evaluation">Request an evaluation <Arrow /></a><a className="button text" href="https://irvlutd.github.io/VLAReplica/#leaderboard">View leaderboard <Arrow /></a></div></div>
+          <div className="vlaBody"><p>Researchers with SO-101-compatible manipulation policies can contact RobotReplica to discuss interfaces, checkpoints, task coverage, and evaluation reporting.</p><div className="vlaLinks"><a className="button primary" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20SO-101%20evaluation%20request">Request an evaluation <Arrow /></a><a className="button text" href="https://irvlutd.github.io/VLAReplica/#leaderboard">View leaderboard <Arrow /></a></div></div>
         </div>
       </section>
 

@@ -16,7 +16,7 @@ const sites = [
     primary: ["Site details", "/vla-replica"],
     secondary: [
       "Request evaluation",
-      "mailto:alex.huang@utdallas.edu?cc=jiahui.zhang@utdallas.edu&subject=RobotReplica%20SO-101%20evaluation",
+      "mailto:robotreplica.org@gmail.com?subject=RobotReplica%20SO-101%20evaluation%20request",
     ],
   },
   {
@@ -110,7 +110,7 @@ export default function Home() {
         <div className="siteStack">
           {sites.map((site) => (
             <article className="siteCard" key={site.robot}>
-              <div className={`siteImage${site.image ? "" : " siteIdentity"}`}>
+              <div className={`siteImage${site.image ? " hasImage" : " siteIdentity"}`}>
                 {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>IRVL / UT DALLAS</small></div>}
                 <span>{site.number}</span>
               </div>
@@ -162,7 +162,7 @@ export default function Home() {
       <section className="join">
         <div className="shell joinInner">
           <div><p className="eyebrow">EXPAND THE NETWORK</p><h2>Operate a robot?<br /><em>Host a site.</em></h2></div>
-          <div><p>We are looking for organizations that can maintain a reproducible robot setup and evaluate community policies. Help bring a new embodiment into RobotReplica.</p><a className="button dark" href="https://github.com/RobotReplica/RobotReplica.github.io/issues/new?title=Benchmark%20site%20proposal">Propose a site <Arrow /></a></div>
+          <div><p>We are looking for organizations that can maintain a reproducible robot setup and evaluate community policies. Help bring a new embodiment into RobotReplica.</p><a className="button dark" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20benchmark%20site%20proposal">Propose a site <Arrow /></a></div>
         </div>
       </section>
 
