@@ -45,6 +45,16 @@ const steps = [
   ["4", "Compare the result", "Your verified score is added to the leaderboard for that site and robot."],
 ];
 
+const so101Leaderboard = [
+  { policy: "π₀.₅", id: "54%", ood: "35%" },
+  { policy: "π₀", id: "34%", ood: "30%" },
+  { policy: "SmolVLA", id: "26%", ood: "30%" },
+  { policy: "ACT", id: "18%", ood: "7.5%" },
+  { policy: "DiT-D", id: "16%", ood: "5%" },
+  { policy: "X-VLA", id: "14%", ood: "7.5%" },
+  { policy: "DiT-F", id: "12%", ood: "2.5%" },
+];
+
 export default function Home() {
   return (
     <main id="top">
@@ -111,7 +121,8 @@ export default function Home() {
         </div>
         <div className="siteStack">
           {sites.map((site) => (
-            <article className="siteCard" key={site.robot}>
+            <div className="siteEntry" key={site.robot}>
+            <article className="siteCard">
               <div className={`siteImage${site.image ? " hasImage" : " siteIdentity"}`}>
                 {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>INTELLIGENT ROBOTICS AND VISION LAB / UT DALLAS</small></div>}
                 <span>{site.number}</span>
@@ -130,6 +141,22 @@ export default function Home() {
                 </div>
               </div>
             </article>
+            {site.robot === "SO-101" ? (
+              <section className="siteLeaderboard" id="leaderboards" aria-labelledby="so101-leaderboard-title">
+                <div className="leaderboardIntro">
+                  <div><p className="eyebrow">LIVE LEADERBOARD</p><h3 id="so101-leaderboard-title">SO-101 · VLA-Replica</h3></div>
+                  <p>Average policy success rates across the official benchmark. Ranked by the in-distribution result.</p>
+                </div>
+                <div className="leaderboardTableWrap">
+                  <table>
+                    <thead><tr><th>Rank</th><th>Policy</th><th>VLA-Replica-ID</th><th>VLA-Replica-OOD</th></tr></thead>
+                    <tbody>{so101Leaderboard.map((result, index) => <tr key={result.policy}><td>{String(index + 1).padStart(2, "0")}</td><th scope="row">{result.policy}</th><td>{result.id}</td><td>{result.ood}</td></tr>)}</tbody>
+                  </table>
+                </div>
+                <div className="leaderboardFoot"><span>Success rate · 5 runs per task</span><a href="https://irvlutd.github.io/VLAReplica/#leaderboard">Full results and evaluation videos <Arrow /></a></div>
+              </section>
+            ) : null}
+            </div>
           ))}
         </div>
       </section>
@@ -146,19 +173,6 @@ export default function Home() {
             ))}
           </div>
           <p className="processNote">Evaluation details—policy interface, checkpoints, task coverage, and reporting—are coordinated directly with the selected host site.</p>
-        </div>
-      </section>
-
-      <section className="leaderboards" id="leaderboards">
-        <div className="shell">
-          <div className="sectionHeading row light">
-            <div><p className="eyebrow">LEADERBOARDS</p><h2>Results grouped by<br /><em>robot and site.</em></h2></div>
-            <p>A score is meaningful only when the embodiment and physical protocol match. RobotReplica keeps those contexts explicit.</p>
-          </div>
-          <div className="boards">
-            <a href="https://irvlutd.github.io/VLAReplica/#leaderboard"><span className="boardRobot">SO-101</span><span><b>VLA-Replica</b><small>Intelligent Robotics and Vision Lab @ UT Dallas</small></span><span className="boardState live">LIVE</span><span>View leaderboard <Arrow /></span></a>
-            <div><span className="boardRobot">OpenArm</span><span><b>RobotReplica OpenArm</b><small>General Intelligence Labs</small></span><span className="boardState planned">IN DEVELOPMENT</span><span>Coming soon</span></div>
-          </div>
         </div>
       </section>
 
