@@ -47,7 +47,14 @@ const sites = [
     imageCredit: null,
     description:
       "A new hosted benchmark for the open-source OpenArm platform, extending the network to larger, bimanual, contact-rich manipulation.",
-    taskSummary: null,
+    taskSummary: {
+      intro: "Initial benchmark tasks are being designed for the standardized OpenArm Cell; the final protocol is still in development.",
+      groups: [
+        ["Bimanual", "Coordinated grasping · Object handoffs · Two-arm placement"],
+        ["Contact-rich", "Insertion and assembly · Tool use · Articulated objects"],
+        ["Robustness", "Object variations · Scene distractors · Tasks at varied heights"],
+      ],
+    },
     facts: ["Bimanual platform", "Open-source hardware", "Protocol in development"],
     maintainers: [
       { name: "Shumo Chu", image: "/maintainer-shumo-chu.jpg", url: "https://www.shumochu.com/" },
