@@ -13,7 +13,7 @@ const sites = [
     imageAlt: "VLA-Replica SO-101 evaluation setup showing the light box, top camera, camera mount, follower arm, and wrist webcam",
     imageCredit: null,
     description:
-      "A hosted SO-101 evaluation site operated by the Intelligent Robotics and Vision Lab at The University of Texas at Dallas.",
+      "A hosted SO-101 evaluation site for reproducible VLA-Replica manipulation benchmarks.",
     partnerRole: "Created VLA-Replica and operates the network’s SO-101 benchmark and leaderboard.",
     taskSummary: {
       intro: "VLA-Replica evaluates 10 tabletop manipulation tasks in both in-distribution and out-of-distribution scenes.",
@@ -47,7 +47,7 @@ const sites = [
     imageAlt: "OpenArm standardized evaluation cell",
     imageCredit: null,
     description:
-      "A hosted OpenArm evaluation site operated by General Intelligence Labs, extending the network to bimanual, contact-rich manipulation.",
+      "A hosted OpenArm evaluation site extending the network to bimanual, contact-rich manipulation.",
     partnerRole: "Developing the OpenArm site for reproducible bimanual and contact-rich evaluation.",
     taskSummary: {
       intro: "Initial benchmark tasks are being designed for the standardized OpenArm Cell; the final protocol is still in development.",
@@ -76,7 +76,7 @@ const sites = [
     imageAlt: "DROID robot platform with a Franka Panda arm, external and wrist stereo cameras, gripper, control laptop, and teleoperation headset",
     imageCredit: ["Image: DROID Dataset", "https://droid-dataset.github.io/"],
     description:
-      "A hosted Franka Panda evaluation site operated by the Generalizable Robot Intelligence and Learning Lab at Cornell University, built around the standardized DROID platform.",
+      "A hosted Franka Panda evaluation site built around the standardized DROID platform.",
     partnerRole: "Building a Franka Panda evaluation site around the standardized DROID platform.",
     taskSummary: {
       intro: "The planned site follows the portable DROID setup for manipulation across varied scenes, objects, and everyday tasks.",
@@ -117,7 +117,6 @@ export default function Home() {
         </a>
         <div className="navLinks">
           <a href="#overview">Overview</a>
-          <a href="#partners">Partner teams</a>
           <a href="#sites">Current sites</a>
           <a href="#process">How it works</a>
           <a href="#leaderboards">Leaderboards</a>
@@ -168,31 +167,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="partners shell" id="partners">
-        <div className="sectionHeading row">
-          <div><p className="eyebrow">PARTNER TEAMS</p><h2>The people behind<br />the <em>network.</em></h2></div>
-          <p>RobotReplica is a joint effort. Each partner contributes its robotics expertise and operates a physical benchmark site for the community.</p>
-        </div>
-        <div className="partnerGrid">
-          {sites.map((site) => (
-            <article className="partnerCard" key={site.host}>
-              <div className="partnerMeta"><span>{site.number}</span><span>{site.location}</span></div>
-              <a className="partnerName" href={site.hostUrl} target="_blank" rel="noreferrer">{site.host} <Arrow /></a>
-              <p>{site.partnerRole}</p>
-              <div className="partnerRobot"><small>OPERATES</small><strong>{site.robot}</strong></div>
-              <div className="partnerPeople">
-                {site.maintainers.map((person) => (
-                  <a href={person.url} key={person.name} target="_blank" rel="noreferrer">
-                    <img src={person.image} alt={person.name} />
-                    <span>{person.name}</span>
-                  </a>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="sites shell" id="sites">
         <div className="sectionHeading row">
           <div><p className="eyebrow">CURRENT SITES</p><h2>Start with the robot<br />you already <em>use.</em></h2></div>
@@ -209,7 +183,13 @@ export default function Home() {
               </div>
               <div className="siteInfo">
                 <div className="siteStatus"><span className={site.status === "Accepting evaluations" ? "live" : "planned"}>● {site.status}</span><span>{site.location}</span></div>
-                <p className="host"><a href={site.hostUrl} target="_blank" rel="noreferrer">{site.host} <Arrow /></a></p>
+                <div className="siteTeam">
+                  <div><small>PARTNER TEAM</small><a href={site.hostUrl} target="_blank" rel="noreferrer">{site.host} <Arrow /></a></div>
+                  <p>{site.partnerRole}</p>
+                  <div className="siteTeamPeople">{site.maintainers.map((person) => (
+                    <a href={person.url} key={person.name} target="_blank" rel="noreferrer"><img src={person.image} alt={person.name} /><span>{person.name}</span></a>
+                  ))}</div>
+                </div>
                 <h3>{site.robot}</h3>
                 <p className="benchmarkName">{site.benchmark}</p>
                 <p className="siteDescription">{site.description}</p>
@@ -220,7 +200,6 @@ export default function Home() {
                   </div>
                 ) : null}
                 <ul>{site.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
-                <a className="operatedBy" href="#partners"><small>OPERATED BY</small><span>{site.host}</span><Arrow /></a>
                 <div className="siteActions">
                   <a className="button primary" href={site.primary[1]}>{site.primary[0]} <Arrow /></a>
                   <a className="button outline" href={site.secondary[1]}>{site.secondary[0]} <Arrow /></a>
