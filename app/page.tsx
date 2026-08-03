@@ -144,7 +144,7 @@ export default function Home() {
             <div>
               {sites.map((site) => (
                 <article className="heroPartner" key={site.host}>
-                  <a className="heroPartnerOrg" href={site.hostUrl} target="_blank" rel="noreferrer"><img src={site.logo} alt="" /><span>{site.shortHost}</span></a>
+                  <a className="heroPartnerOrg" href={site.hostUrl} target="_blank" rel="noreferrer"><img src={site.logo} alt="" /><span><b>{site.shortHost}</b><small>{site.location}</small></span></a>
                   <div className="heroPartnerPeople">{site.maintainers.map((person) => (
                     <a href={person.url} key={person.name} target="_blank" rel="noreferrer" title={person.name}><img src={person.image} alt={person.name} /><span>{person.name}</span></a>
                   ))}</div>
