@@ -14,6 +14,14 @@ const sites = [
     imageCredit: null,
     description:
       "A hosted SO-101 evaluation site operated by the Intelligent Robotics and Vision Lab at The University of Texas at Dallas.",
+    taskSummary: {
+      intro: "VLA-Replica evaluates 10 tabletop manipulation tasks in both in-distribution and out-of-distribution scenes.",
+      groups: [
+        ["Pick & place", "Bread on plate · Bowl on coaster · Lift bowl"],
+        ["Dexterous", "Stack or collect blocks · Fold towel · Pour pepper"],
+        ["Interaction", "Open oven · Clean whiteboard · Press button"],
+      ],
+    },
     facts: ["SO-101 arm", "UT Dallas", "Accepting evaluations"],
     maintainers: [
       { name: "Alex S. Huang", image: "/maintainer-alex-huang.jpg", url: "https://alexhuang1029.github.io/" },
@@ -39,6 +47,7 @@ const sites = [
     imageCredit: null,
     description:
       "A new hosted benchmark for the open-source OpenArm platform, extending the network to larger, bimanual, contact-rich manipulation.",
+    taskSummary: null,
     facts: ["Bimanual platform", "Open-source hardware", "Protocol in development"],
     maintainers: [
       { name: "Shumo Chu", image: "/maintainer-shumo-chu.jpg", url: "https://www.shumochu.com/" },
@@ -140,6 +149,12 @@ export default function Home() {
                 <h3>{site.robot}</h3>
                 <p className="benchmarkName">{site.benchmark}</p>
                 <p className="siteDescription">{site.description}</p>
+                {site.taskSummary ? (
+                  <div className="taskSummary">
+                    <p><b>Benchmark tasks</b>{site.taskSummary.intro}</p>
+                    <div>{site.taskSummary.groups.map(([label, tasks]) => <span key={label}><strong>{label}</strong><small>{tasks}</small></span>)}</div>
+                  </div>
+                ) : null}
                 <ul>{site.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
                 <div className="maintainers">
                   <p>Site maintainers</p>
