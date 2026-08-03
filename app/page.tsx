@@ -6,6 +6,8 @@ const sites = [
     status: "Accepting evaluations",
     host: "Intelligent Robotics and Vision Lab @ UT Dallas",
     hostUrl: "https://labs.utdallas.edu/irvl/",
+    shortHost: "IRVL · UT Dallas",
+    logo: "/logo-irvl.png",
     location: "Richardson, Texas",
     robot: "SO-101",
     benchmark: "RobotReplica SO-101 site",
@@ -13,7 +15,8 @@ const sites = [
     imageAlt: "VLA-Replica SO-101 evaluation setup showing the light box, top camera, camera mount, follower arm, and wrist webcam",
     imageCredit: null,
     description:
-      "A hosted SO-101 evaluation site operated by the Intelligent Robotics and Vision Lab at The University of Texas at Dallas.",
+      "A hosted SO-101 evaluation site for reproducible VLA-Replica manipulation benchmarks.",
+    partnerRole: "Created VLA-Replica and operates the network’s SO-101 benchmark and leaderboard.",
     taskSummary: {
       intro: "VLA-Replica evaluates 10 tabletop manipulation tasks in both in-distribution and out-of-distribution scenes.",
       groups: [
@@ -39,6 +42,8 @@ const sites = [
     status: "In development",
     host: "General Intelligence Labs",
     hostUrl: "https://www.gilabs.xyz/",
+    shortHost: "General Intelligence Labs",
+    logo: "/logo-gi-labs.svg",
     location: "San Francisco, California",
     robot: "OpenArm",
     benchmark: "RobotReplica OpenArm",
@@ -46,7 +51,8 @@ const sites = [
     imageAlt: "OpenArm standardized evaluation cell",
     imageCredit: null,
     description:
-      "A hosted OpenArm evaluation site operated by General Intelligence Labs, extending the network to bimanual, contact-rich manipulation.",
+      "A hosted OpenArm evaluation site extending the network to bimanual, contact-rich manipulation.",
+    partnerRole: "Developing the OpenArm site for reproducible bimanual and contact-rich evaluation.",
     taskSummary: {
       intro: "Initial benchmark tasks are being designed for the standardized OpenArm Cell; the final protocol is still in development.",
       groups: [
@@ -67,6 +73,8 @@ const sites = [
     status: "In development",
     host: "Generalizable Robot Intelligence and Learning Lab @ Cornell University",
     hostUrl: "https://kuanfang.github.io/join-us.html",
+    shortHost: "GRILL · Cornell",
+    logo: "/logo-grill.png",
     location: "Ithaca, New York",
     robot: "Franka Panda",
     benchmark: "RobotReplica DROID site",
@@ -74,7 +82,8 @@ const sites = [
     imageAlt: "DROID robot platform with a Franka Panda arm, external and wrist stereo cameras, gripper, control laptop, and teleoperation headset",
     imageCredit: ["Image: DROID Dataset", "https://droid-dataset.github.io/"],
     description:
-      "A hosted Franka Panda evaluation site operated by the Generalizable Robot Intelligence and Learning Lab at Cornell University, built around the standardized DROID platform.",
+      "A hosted Franka Panda evaluation site built around the standardized DROID platform.",
+    partnerRole: "Building a Franka Panda evaluation site around the standardized DROID platform.",
     taskSummary: {
       intro: "The planned site follows the portable DROID setup for manipulation across varied scenes, objects, and everyday tasks.",
       groups: [
@@ -130,6 +139,19 @@ export default function Home() {
             manipulation benchmarks. Find a site with the same robot you use, send us
             your policy, and we evaluate it on maintained real-world tasks.
           </p>
+          <div className="heroPartners" aria-label="RobotReplica partner organizations">
+            <p>PARTNER ORGANIZATIONS &amp; PEOPLE</p>
+            <div>
+              {sites.map((site) => (
+                <article className="heroPartner" key={site.host}>
+                  <a className="heroPartnerOrg" href={site.hostUrl} target="_blank" rel="noreferrer"><img src={site.logo} alt="" /><span><b>{site.shortHost}</b><small>{site.location}</small></span></a>
+                  <div className="heroPartnerPeople">{site.maintainers.map((person) => (
+                    <a href={person.url} key={person.name} target="_blank" rel="noreferrer" title={person.name}><img src={person.image} alt={person.name} /><span>{person.name}</span></a>
+                  ))}</div>
+                </article>
+              ))}
+            </div>
+          </div>
           <div className="heroActions">
             <a className="button primary" href="#sites">View current sites <span>↓</span></a>
             <a className="button text" href="#process">How evaluation works <Arrow /></a>
@@ -193,14 +215,12 @@ export default function Home() {
                 <ul>{site.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
                 <div className="maintainers">
                   <p>Site maintainers</p>
-                  <div className="maintainerList">
-                    {site.maintainers.map((person) => (
-                      <a className="maintainer" href={person.url} key={person.name} target="_blank" rel="noreferrer">
-                        <img src={person.image} alt={`${person.name}, maintainer of the ${site.robot} site`} />
-                        <span><b>{person.name}</b><small>Profile <Arrow /></small></span>
-                      </a>
-                    ))}
-                  </div>
+                  <div className="maintainerList">{site.maintainers.map((person) => (
+                    <a className="maintainer" href={person.url} key={person.name} target="_blank" rel="noreferrer">
+                      <img src={person.image} alt={`${person.name}, maintainer of the ${site.robot} site`} />
+                      <span><b>{person.name}</b><small>Profile <Arrow /></small></span>
+                    </a>
+                  ))}</div>
                 </div>
                 <div className="siteActions">
                   <a className="button primary" href={site.primary[1]}>{site.primary[0]} <Arrow /></a>
