@@ -6,6 +6,8 @@ const sites = [
     status: "Accepting evaluations",
     host: "Intelligent Robotics and Vision Lab @ UT Dallas",
     hostUrl: "https://labs.utdallas.edu/irvl/",
+    shortHost: "IRVL · UT Dallas",
+    logo: "/logo-irvl.png",
     location: "Richardson, Texas",
     robot: "SO-101",
     benchmark: "RobotReplica SO-101 site",
@@ -40,6 +42,8 @@ const sites = [
     status: "In development",
     host: "General Intelligence Labs",
     hostUrl: "https://www.gilabs.xyz/",
+    shortHost: "General Intelligence Labs",
+    logo: "/logo-gi-labs.svg",
     location: "San Francisco, California",
     robot: "OpenArm",
     benchmark: "RobotReplica OpenArm",
@@ -69,6 +73,8 @@ const sites = [
     status: "In development",
     host: "Generalizable Robot Intelligence and Learning Lab @ Cornell University",
     hostUrl: "https://kuanfang.github.io/join-us.html",
+    shortHost: "GRILL · Cornell",
+    logo: "/logo-grill.png",
     location: "Ithaca, New York",
     robot: "Franka Panda",
     benchmark: "RobotReplica DROID site",
@@ -134,11 +140,16 @@ export default function Home() {
             your policy, and we evaluate it on maintained real-world tasks.
           </p>
           <div className="heroPartners" aria-label="RobotReplica partner organizations">
-            <p>PARTNER ORGANIZATIONS</p>
+            <p>PARTNER ORGANIZATIONS &amp; PEOPLE</p>
             <div>
-              <a href="https://labs.utdallas.edu/irvl/" target="_blank" rel="noreferrer"><img src="/logo-irvl.png" alt="Intelligent Robotics and Vision Lab" /><span>IRVL · UT Dallas</span></a>
-              <a href="https://www.gilabs.xyz/" target="_blank" rel="noreferrer"><img src="/logo-gi-labs.svg" alt="General Intelligence Labs" /><span>General Intelligence Labs</span></a>
-              <a href="https://kuanfang.github.io/join-us.html" target="_blank" rel="noreferrer"><img src="/logo-grill.png" alt="Generalizable Robot Intelligence and Learning Lab" /><span>GRILL · Cornell</span></a>
+              {sites.map((site) => (
+                <article className="heroPartner" key={site.host}>
+                  <a className="heroPartnerOrg" href={site.hostUrl} target="_blank" rel="noreferrer"><img src={site.logo} alt="" /><span>{site.shortHost}</span></a>
+                  <div className="heroPartnerPeople">{site.maintainers.map((person) => (
+                    <a href={person.url} key={person.name} target="_blank" rel="noreferrer" title={person.name}><img src={person.image} alt={person.name} /><span>{person.name}</span></a>
+                  ))}</div>
+                </article>
+              ))}
             </div>
           </div>
           <div className="heroActions">
@@ -194,9 +205,6 @@ export default function Home() {
                 <div className="siteTeam">
                   <div><small>PARTNER TEAM</small><a href={site.hostUrl} target="_blank" rel="noreferrer">{site.host} <Arrow /></a></div>
                   <p>{site.partnerRole}</p>
-                  <div className="siteTeamPeople">{site.maintainers.map((person) => (
-                    <a href={person.url} key={person.name} target="_blank" rel="noreferrer"><img src={person.image} alt={person.name} /><span>{person.name}</span></a>
-                  ))}</div>
                 </div>
                 <h3>{site.robot}</h3>
                 <p className="benchmarkName">{site.benchmark}</p>
