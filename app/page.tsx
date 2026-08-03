@@ -46,7 +46,7 @@ const sites = [
     imageAlt: "OpenArm standardized evaluation cell",
     imageCredit: null,
     description:
-      "A new hosted benchmark for the open-source OpenArm platform, extending the network to larger, bimanual, contact-rich manipulation.",
+      "A hosted OpenArm evaluation site operated by General Intelligence Labs, extending the network to bimanual, contact-rich manipulation.",
     taskSummary: {
       intro: "Initial benchmark tasks are being designed for the standardized OpenArm Cell; the final protocol is still in development.",
       groups: [
@@ -74,7 +74,7 @@ const sites = [
     imageAlt: "DROID robot platform with a Franka Panda arm, external and wrist stereo cameras, gripper, control laptop, and teleoperation headset",
     imageCredit: ["Image: DROID Dataset", "https://droid-dataset.github.io/"],
     description:
-      "A Cornell-hosted evaluation site led by Dr. Kuan Fang, built around the standardized DROID robot platform for diverse real-world manipulation.",
+      "A hosted Franka Panda evaluation site operated by the Generalizable Robot Intelligence and Learning Lab at Cornell University, built around the standardized DROID platform.",
     taskSummary: {
       intro: "The planned site follows the portable DROID setup for manipulation across varied scenes, objects, and everyday tasks.",
       groups: [
