@@ -1,0 +1,8 @@
+<svg width="60" height="32" viewBox="0 0 1326 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <mask id="gilabs-icon-hole" maskUnits="userSpaceOnUse" x="0" y="0" width="700" height="700">
+    <rect width="700" height="700" rx="130" fill="white"/>
+    <circle cx="350" cy="350" r="270" fill="black"/>
+  </mask>
+  <rect width="700" height="700" rx="130" fill="black" mask="url(#gilabs-icon-hole)"/>
+  <circle cx="1056" cy="350" r="270" fill="black"/>
+</svg>

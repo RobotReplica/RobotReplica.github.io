@@ -133,6 +133,14 @@ export default function Home() {
             manipulation benchmarks. Find a site with the same robot you use, send us
             your policy, and we evaluate it on maintained real-world tasks.
           </p>
+          <div className="heroPartners" aria-label="RobotReplica partner organizations">
+            <p>PARTNER ORGANIZATIONS</p>
+            <div>
+              <a href="https://labs.utdallas.edu/irvl/" target="_blank" rel="noreferrer"><img src="/logo-irvl.png" alt="Intelligent Robotics and Vision Lab" /><span>IRVL · UT Dallas</span></a>
+              <a href="https://www.gilabs.xyz/" target="_blank" rel="noreferrer"><img src="/logo-gi-labs.svg" alt="General Intelligence Labs" /><span>General Intelligence Labs</span></a>
+              <a href="https://kuanfang.github.io/join-us.html" target="_blank" rel="noreferrer"><img src="/logo-grill.png" alt="Generalizable Robot Intelligence and Learning Lab" /><span>GRILL · Cornell</span></a>
+            </div>
+          </div>
           <div className="heroActions">
             <a className="button primary" href="#sites">View current sites <span>↓</span></a>
             <a className="button text" href="#process">How evaluation works <Arrow /></a>
