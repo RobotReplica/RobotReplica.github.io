@@ -46,14 +46,49 @@ const sites = [
     imageAlt: "OpenArm standardized evaluation cell",
     imageCredit: null,
     description:
-      "A new hosted benchmark for the open-source OpenArm platform, extending the network to larger, bimanual, contact-rich manipulation.",
-    taskSummary: null,
+      "A hosted OpenArm evaluation site operated by General Intelligence Labs, extending the network to bimanual, contact-rich manipulation.",
+    taskSummary: {
+      intro: "Initial benchmark tasks are being designed for the standardized OpenArm Cell; the final protocol is still in development.",
+      groups: [
+        ["Bimanual", "Coordinated grasping · Object handoffs · Two-arm placement"],
+        ["Contact-rich", "Insertion and assembly · Tool use · Articulated objects"],
+        ["Robustness", "Object variations · Scene distractors · Tasks at varied heights"],
+      ],
+    },
     facts: ["Bimanual platform", "Open-source hardware", "Protocol in development"],
     maintainers: [
       { name: "Shumo Chu", image: "/maintainer-shumo-chu.jpg", url: "https://www.shumochu.com/" },
     ],
     primary: ["Meet the host", "https://www.gilabs.xyz/"],
     secondary: ["Explore OpenArm", "https://openarm.dev/"],
+  },
+  {
+    number: "SITE 03",
+    status: "In development",
+    host: "Generalizable Robot Intelligence and Learning Lab @ Cornell University",
+    hostUrl: "https://kuanfang.github.io/join-us.html",
+    location: "Ithaca, New York",
+    robot: "Franka Panda",
+    benchmark: "RobotReplica DROID site",
+    image: "/droid-setup.png",
+    imageAlt: "DROID robot platform with a Franka Panda arm, external and wrist stereo cameras, gripper, control laptop, and teleoperation headset",
+    imageCredit: ["Image: DROID Dataset", "https://droid-dataset.github.io/"],
+    description:
+      "A hosted Franka Panda evaluation site operated by the Generalizable Robot Intelligence and Learning Lab at Cornell University, built around the standardized DROID platform.",
+    taskSummary: {
+      intro: "The planned site follows the portable DROID setup for manipulation across varied scenes, objects, and everyday tasks.",
+      groups: [
+        ["Robot", "Franka Panda 7-DoF arm · Robotiq 2F-85 gripper"],
+        ["Vision", "Two adjustable ZED 2 cameras · Wrist-mounted ZED Mini"],
+        ["Operation", "Portable standing desk · Headset teleoperation"],
+      ],
+    },
+    facts: ["Franka Panda arm", "DROID platform", "In development"],
+    maintainers: [
+      { name: "Kuan Fang", image: "/maintainer-kuan-fang.jpg", url: "https://kuanfang.github.io/index.html" },
+    ],
+    primary: ["Explore DROID", "https://droid-dataset.github.io/"],
+    secondary: ["Visit the lab", "https://kuanfang.github.io/join-us.html"],
   },
 ];
 
@@ -132,7 +167,7 @@ export default function Home() {
       <section className="sites shell" id="sites">
         <div className="sectionHeading row">
           <div><p className="eyebrow">CURRENT SITES</p><h2>Start with the robot<br />you already <em>use.</em></h2></div>
-          <p>Two organizations are building the first RobotReplica sites. Each site owns its hardware, tasks, evaluation process, and robot-specific leaderboard.</p>
+          <p>Three organizations are building the first RobotReplica sites. Each site owns its hardware, tasks, evaluation process, and robot-specific leaderboard.</p>
         </div>
         <div className="siteStack">
           {sites.map((site) => (
