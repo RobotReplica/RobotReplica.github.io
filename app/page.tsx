@@ -202,10 +202,7 @@ export default function Home() {
               </div>
               <div className="siteInfo">
                 <div className="siteStatus"><span className={site.status === "Accepting evaluations" ? "live" : "planned"}>● {site.status}</span><span>{site.location}</span></div>
-                <div className="siteTeam">
-                  <div><small>PARTNER TEAM</small><a href={site.hostUrl} target="_blank" rel="noreferrer">{site.host} <Arrow /></a></div>
-                  <p>{site.partnerRole}</p>
-                </div>
+                <p className="host"><a href={site.hostUrl} target="_blank" rel="noreferrer">{site.host} <Arrow /></a></p>
                 <h3>{site.robot}</h3>
                 <p className="benchmarkName">{site.benchmark}</p>
                 <p className="siteDescription">{site.description}</p>
@@ -216,6 +213,15 @@ export default function Home() {
                   </div>
                 ) : null}
                 <ul>{site.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
+                <div className="maintainers">
+                  <p>Site maintainers</p>
+                  <div className="maintainerList">{site.maintainers.map((person) => (
+                    <a className="maintainer" href={person.url} key={person.name} target="_blank" rel="noreferrer">
+                      <img src={person.image} alt={`${person.name}, maintainer of the ${site.robot} site`} />
+                      <span><b>{person.name}</b><small>Profile <Arrow /></small></span>
+                    </a>
+                  ))}</div>
+                </div>
                 <div className="siteActions">
                   <a className="button primary" href={site.primary[1]}>{site.primary[0]} <Arrow /></a>
                   <a className="button outline" href={site.secondary[1]}>{site.secondary[0]} <Arrow /></a>
