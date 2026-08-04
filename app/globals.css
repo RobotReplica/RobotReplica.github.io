@@ -45,6 +45,7 @@
 .vlaTasksIntro{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}.vlaTasksIntro .vlaSectionHead{margin-bottom:0}.vlaTasksIntro .button{margin-top:18px}.vlaTaskFamilies{border-top:1px solid var(--line)}.vlaTaskFamilies article{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}.vlaTaskFamilies article>span{font:700 10px var(--font-geist-mono);color:var(--coral);padding-top:4px}.vlaTaskFamilies h3{font-size:18px;color:var(--navy);margin:0 0 6px}.vlaTaskFamilies p{font-size:12px;line-height:1.5;color:var(--muted);margin:0}.vlaTasksFigure{max-width:940px;margin:58px auto 0;padding:16px 16px 12px;border:1px solid var(--line);border-radius:12px;background:#f8fbff}.vlaTasksFigure img{border:0;border-radius:7px}.vlaTasksFigure figcaption{display:flex;justify-content:space-between;gap:20px;padding:13px 2px 0}.vlaTasksFigure figcaption b{color:var(--navy)}
 @media(max-width:960px){.vlaTasksIntro{grid-template-columns:1fr;gap:42px}.vlaTasksFigure{margin-top:42px}}
 @media(max-width:600px){.vlaTaskFamilies article{grid-template-columns:52px 1fr}.vlaTasksFigure{padding:9px}.vlaTasksFigure figcaption{display:block}}
+.heroPartners>div:first-of-type{grid-template-columns:repeat(2,1fr)}
 
 /* Preserve full homepage artwork without cropping wide source images. */
 .heroVisual img{height:auto;aspect-ratio:1731/909;object-fit:contain}

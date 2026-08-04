@@ -102,6 +102,39 @@ const sites = [
     primary: ["Explore DROID", "https://droid-dataset.github.io/"],
     secondary: ["Visit the lab", "https://kuanfang.github.io/join-us.html"],
   },
+  {
+    number: "SITE 04",
+    status: "In development",
+    host: "Computational Design and Fabrication Group @ MIT",
+    hostUrl: "https://cdfg.mit.edu/",
+    shortHost: "CDFG · MIT",
+    logo: "/logo-mit-cdfg.png",
+    location: "Cambridge, Massachusetts",
+    mapPosition: { left: "91%", top: "22%" },
+    robot: "Franka Panda",
+    benchmark: "RobotReplica Franka Panda site",
+    image: "/franka-panda-mit.jpg",
+    imageAlt: "Franka seven-degree-of-freedom research robot arm",
+    imageCredit: ["Image: Franka Robotics", "https://franka.de/franka-research-3"],
+    description:
+      "A hosted Franka Panda evaluation site extending the network with a new reproducible manipulation benchmark.",
+    partnerRole: "Developing a Franka Panda site and a new suite of standardized manipulation tasks.",
+    taskSummary: {
+      intro: "The team is developing its robot workspace, benchmark tasks, scene specifications, and baseline evaluation protocol.",
+      groups: [
+        ["Robot", "Franka Panda 7-DoF research arm"],
+        ["Workspace", "Controlled lighting · Fixed camera views · Repeatable scenes"],
+        ["Benchmark", "Task suite and evaluation protocol in development"],
+      ],
+    },
+    facts: ["Franka Panda arm", "MIT CSAIL", "In development"],
+    maintainers: [
+      { name: "Zhiyang (Frank) Dou", image: "/maintainer-frank-dou.webp", url: "https://people.csail.mit.edu/frankzydou/" },
+      { name: "Wojciech Matusik", image: "/maintainer-wojciech-matusik.jpg", url: "https://cdfg.mit.edu/wojciech" },
+    ],
+    primary: ["Visit CDFG", "https://cdfg.mit.edu/"],
+    secondary: ["Explore Franka", "https://franka.de/franka-research-3"],
+  },
 ];
 
 const steps = [
@@ -164,7 +197,7 @@ export default function Home() {
               ))}
             </div>
             <div className="partnerMap">
-              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Three sites across the United States</b></p>
+              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Four sites across the United States</b></p>
               <div className="partnerMapIntro">
                 <p>Our current network includes three physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
                 <a href="#build-a-site">Become a partner <Arrow /></a>
@@ -232,7 +265,7 @@ export default function Home() {
       <section className="sites shell" id="sites">
         <div className="sectionHeading row">
           <div><p className="eyebrow">CURRENT SITES</p><h2>Start with the robot<br />you already <em>use.</em></h2></div>
-          <p>Three organizations are building the first RobotReplica sites. Each site owns its hardware, tasks, evaluation process, and robot-specific leaderboard.</p>
+          <p>Four organizations are building the first RobotReplica sites. Each site owns its hardware, tasks, evaluation process, and robot-specific leaderboard.</p>
         </div>
         <div className="siteStack">
           {sites.map((site) => (
