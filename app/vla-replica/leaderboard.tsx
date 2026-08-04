@@ -4,6 +4,11 @@ import { useMemo, useState } from "react";
 
 type DatasetKey = "id" | "ood";
 type SortKey = "average" | number;
+type LeaderboardRow = [task: string, ...scores: number[]];
+type LeaderboardDataset = {
+  average: number[];
+  groups: Array<{ type: string; rows: LeaderboardRow[] }>;
+};
 
 const methods = [
   { label: "ACT", ref: 1, slug: "act" }, { label: "DiT-D", ref: 2, slug: "dit-d" },
@@ -12,7 +17,7 @@ const methods = [
   { label: "π₀.₅", ref: 6, slug: "pi-0-5" },
 ];
 
-const data = {
+const data: Record<DatasetKey, LeaderboardDataset> = {
   id: {
     average: [0.18, 0.16, 0.12, 0.26, 0.14, 0.34, 0.54],
     groups: [
@@ -44,7 +49,7 @@ const data = {
       ]},
     ],
   },
-} as const;
+};
 
 const pct = (value: number) => value === 0 ? "0" : String(value);
 
