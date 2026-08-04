@@ -7,10 +7,8 @@ const project_name = 'VLA-REPLICA: A Low-Cost, Reproducible Benchmark for Real-W
 $(document).ready(function () {
 	const isSceneVideoPage = window.location.pathname.includes('/scene-videos/');
 	const homeHref = isSceneVideoPage ? '..' : '.';
-	if (isSceneVideoPage) {
-		const homeLink = document.querySelector('.home-icon')?.closest('a');
-		if (homeLink) homeLink.setAttribute('href', '/vla-replica');
-	}
+	const homeLink = document.querySelector('.home-icon')?.closest('a');
+	if (homeLink) homeLink.setAttribute('href', '/vla-replica');
 	const today = new Date().toLocaleDateString('en-US', {
 		year: 'numeric',
 		month: 'short',
