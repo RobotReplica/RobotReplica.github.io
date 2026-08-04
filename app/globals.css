@@ -39,6 +39,7 @@
 @media(max-width:960px){.vlaSectionGrid,.vlaBuildGrid{grid-template-columns:1fr}.vlaProjectHeader{padding-top:55px}.vlaSceneGrid{grid-template-columns:1fr}.vlaBuildGrid{gap:35px}}
 @media(max-width:600px){.vlaProjectHeader{padding-bottom:75px}.vlaProjectHeader h1{font-size:64px}.vlaPaperTitle{font-size:20px}.vlaAuthors{display:grid;grid-template-columns:1fr 1fr;gap:18px}.vlaAuthors a{flex-direction:column}.vlaPaperSection{padding-top:78px;padding-bottom:78px}.vlaSectionGrid{gap:35px}.vlaSceneGrid img{height:200px}.vlaCode .vlaResourceGrid{grid-template-columns:1fr}.vlaBuildGrid .heroActions{align-items:flex-start;flex-direction:column}}
 .vlaReferences ol{counter-reset:vla-ref;list-style:none;padding-left:0}.vlaReferences li{counter-increment:vla-ref;position:relative;padding-left:46px}.vlaReferences li:before{content:"[" counter(vla-ref) "]";position:absolute;left:0;top:0;color:var(--navy);font:700 12px/1.65 var(--font-geist-mono)}
+.vlaBuild .button.outline{color:#fff;border-color:#8fa7c9;background:rgba(255,255,255,.04)}.vlaBuild .button.outline:hover{border-color:#fff;background:rgba(255,255,255,.1)}
 
 /* Preserve full homepage artwork without cropping wide source images. */
 .heroVisual img{height:auto;aspect-ratio:1731/909;object-fit:contain}
