@@ -157,7 +157,7 @@ export default function Home() {
             <div className="partnerMap">
               <p><span>PARTNER NETWORK</span><b>Three sites across the United States</b></p>
               <div className="partnerMapCanvas">
-                <img src="/us-map-48states.svg" alt="Map of the contiguous United States" />
+                <img src="/us-map-48states.svg?v=2" alt="Map of the contiguous United States with state boundaries" />
                 {sites.map((site) => (
                   <a
                     className="mapMarker"
