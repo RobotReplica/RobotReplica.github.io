@@ -9,6 +9,7 @@ const sites = [
     shortHost: "IRVL · UT Dallas",
     logo: "/logo-irvl.png",
     location: "Richardson, Texas",
+    mapPosition: { left: "49%", top: "70%" },
     robot: "SO-101",
     benchmark: "RobotReplica SO-101 site",
     image: "/vla-replica-overview.jpg",
@@ -45,6 +46,7 @@ const sites = [
     shortHost: "General Intelligence Labs",
     logo: "/logo-gi-labs.svg",
     location: "San Francisco, California",
+    mapPosition: { left: "8%", top: "43%" },
     robot: "OpenArm",
     benchmark: "RobotReplica OpenArm",
     image: "/openarm-cell.png",
@@ -76,6 +78,7 @@ const sites = [
     shortHost: "GRILL · Cornell",
     logo: "/logo-grill.png",
     location: "Ithaca, New York",
+    mapPosition: { left: "84%", top: "27%" },
     robot: "Franka Panda",
     benchmark: "RobotReplica DROID site",
     image: "/droid-setup.png",
@@ -150,6 +153,33 @@ export default function Home() {
                   ))}</div>
                 </article>
               ))}
+            </div>
+            <div className="partnerMap">
+              <p><span>PARTNER NETWORK</span><b>Three sites across the United States</b></p>
+              <div className="partnerMapCanvas">
+                <img src="/us-map-48states.svg" alt="Map of the contiguous United States" />
+                {sites.map((site) => (
+                  <a
+                    className="mapMarker"
+                    href={site.hostUrl}
+                    key={site.host}
+                    style={site.mapPosition}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${site.shortHost}, ${site.location}`}
+                  >
+                    <i aria-hidden="true" />
+                    <span><b>{site.shortHost}</b><small>{site.location}</small></span>
+                  </a>
+                ))}
+              </div>
+              <div className="partnerMapList">
+                {sites.map((site) => (
+                  <a href={site.hostUrl} key={site.host} target="_blank" rel="noreferrer">
+                    <i aria-hidden="true" /><span><b>{site.shortHost}</b><small>{site.location}</small></span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
           <div className="heroActions">
