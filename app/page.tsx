@@ -79,28 +79,61 @@ const sites = [
     logo: "/logo-grill.png",
     location: "Ithaca, New York",
     mapPosition: { left: "84%", top: "27%" },
-    robot: "Franka Panda",
-    benchmark: "RobotReplica DROID site",
-    image: "/droid-setup.png",
-    imageAlt: "DROID robot platform with a Franka Panda arm, external and wrist stereo cameras, gripper, control laptop, and teleoperation headset",
-    imageCredit: ["Image: DROID Dataset", "https://droid-dataset.github.io/"],
+    robot: "Tianji Marvin Arms",
+    benchmark: "RobotReplica Marvin site",
+    image: "/tianji-marvin-arms.jpg",
+    imageAlt: "Tianji Marvin dual-arm robot system",
+    imageCredit: ["Image: TianJi", "https://en.tianjizn.com/products/marvin-series/"],
     description:
-      "A hosted Franka Panda evaluation site built around the standardized DROID platform.",
-    partnerRole: "Building a Franka Panda evaluation site around the standardized DROID platform.",
+      "A hosted Tianji Marvin dual-arm evaluation site for reproducible, force-aware manipulation benchmarks.",
+    partnerRole: "Developing a Tianji Marvin dual-arm site and a new suite of standardized manipulation tasks.",
     taskSummary: {
-      intro: "The planned site follows the portable DROID setup for manipulation across varied scenes, objects, and everyday tasks.",
+      intro: "The team is developing a benchmark around the force-controlled, humanlike Marvin arm platform.",
       groups: [
-        ["Robot", "Franka Panda 7-DoF arm · Robotiq 2F-85 gripper"],
-        ["Vision", "Two adjustable ZED 2 cameras · Wrist-mounted ZED Mini"],
-        ["Operation", "Portable standing desk · Headset teleoperation"],
+        ["Robot", "Dual 7-DoF humanlike arms · Full-joint torque sensing"],
+        ["Control", "Full-force control · Adaptive impedance · Compliant interaction"],
+        ["Benchmark", "Task suite and evaluation protocol in development"],
       ],
     },
-    facts: ["Franka Panda arm", "DROID platform", "In development"],
+    facts: ["Tianji Marvin arms", "Full-force control", "In development"],
     maintainers: [
       { name: "Kuan Fang", image: "/maintainer-kuan-fang.jpg", url: "https://kuanfang.github.io/index.html" },
     ],
-    primary: ["Explore DROID", "https://droid-dataset.github.io/"],
+    primary: ["Explore Marvin", "https://en.tianjizn.com/products/marvin-series/"],
     secondary: ["Visit the lab", "https://kuanfang.github.io/join-us.html"],
+  },
+  {
+    number: "SITE 04",
+    status: "In development",
+    host: "Computational Design and Fabrication Group @ MIT",
+    hostUrl: "https://cdfg.mit.edu/",
+    shortHost: "CDFG · MIT",
+    logo: "/logo-mit-cdfg.png",
+    location: "Cambridge, Massachusetts",
+    mapPosition: { left: "91%", top: "22%" },
+    robot: "Franka Panda",
+    benchmark: "RobotReplica Franka Panda site",
+    image: "/franka-research-3-official.jpg",
+    imageAlt: "Full view of a single-arm Franka Research 3 robot with gripper",
+    imageCredit: ["Image: Franka Robotics", "https://franka.de/products-overview"],
+    description:
+      "A hosted Franka Panda evaluation site extending the network with a new reproducible manipulation benchmark.",
+    partnerRole: "Developing a Franka Panda site and a new suite of standardized manipulation tasks.",
+    taskSummary: {
+      intro: "The team is developing its robot workspace, benchmark tasks, scene specifications, and baseline evaluation protocol.",
+      groups: [
+        ["Robot", "Franka Panda 7-DoF research arm"],
+        ["Workspace", "Controlled lighting · Fixed camera views · Repeatable scenes"],
+        ["Benchmark", "Task suite and evaluation protocol in development"],
+      ],
+    },
+    facts: ["Franka Panda arm", "MIT CSAIL", "In development"],
+    maintainers: [
+      { name: "Zhiyang (Frank) Dou", image: "/maintainer-frank-dou.webp", url: "https://people.csail.mit.edu/frankzydou/" },
+      { name: "Wojciech Matusik", image: "/maintainer-wojciech-matusik.jpg", url: "https://cdfg.mit.edu/wojciech" },
+    ],
+    primary: ["Visit CDFG", "https://cdfg.mit.edu/"],
+    secondary: ["Explore Franka", "https://franka.de/franka-research-3"],
   },
 ];
 
@@ -164,7 +197,7 @@ export default function Home() {
               ))}
             </div>
             <div className="partnerMap">
-              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Three sites across the United States</b></p>
+              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Four sites across the United States</b></p>
               <div className="partnerMapIntro">
                 <p>Our current network includes three physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
                 <a href="#build-a-site">Become a partner <Arrow /></a>
@@ -232,7 +265,7 @@ export default function Home() {
       <section className="sites shell" id="sites">
         <div className="sectionHeading row">
           <div><p className="eyebrow">CURRENT SITES</p><h2>Start with the robot<br />you already <em>use.</em></h2></div>
-          <p>Three organizations are building the first RobotReplica sites. Each site owns its hardware, tasks, evaluation process, and robot-specific leaderboard.</p>
+          <p>Four organizations are building the first RobotReplica sites. Each site owns its hardware, tasks, evaluation process, and robot-specific leaderboard.</p>
         </div>
         <div className="siteStack">
           {sites.map((site) => (
