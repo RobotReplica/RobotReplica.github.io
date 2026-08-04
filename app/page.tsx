@@ -111,6 +111,14 @@ const steps = [
   ["4", "Compare the result", "Your verified score is added to the leaderboard for that site and robot."],
 ];
 
+const siteBuildingSteps = [
+  ["01", "Choose the robot", "Select the robot embodiment your organization can maintain and support for repeated community evaluations."],
+  ["02", "Build the workspace", "Create a stable physical workspace with consistent lighting, a light box where appropriate, and fixed external and wrist cameras."],
+  ["03", "Design the tasks", "Define a diverse benchmark suite—typically around 10 tasks—that reflects the robot’s capabilities and useful manipulation skills."],
+  ["04", "Specify the scenes", "Create repeatable scene setups for every task, including object placement and in-distribution and out-of-distribution variations."],
+  ["05", "Validate with a policy", "Run a baseline policy across the full suite to verify task feasibility, evaluation criteria, and the end-to-end protocol."],
+];
+
 const so101Leaders = [
   { policy: "π₀.₅", id: "54%", ood: "35%" },
   { policy: "π₀", id: "34%", ood: "30%" },
@@ -128,6 +136,7 @@ export default function Home() {
           <a href="#overview">Overview</a>
           <a href="#sites">Current sites</a>
           <a href="#process">How it works</a>
+          <a href="#build-a-site">Build a site</a>
           <a href="#leaderboards">Leaderboards</a>
         </div>
         <a className="navCta" href="#sites">Find a site</a>
@@ -298,6 +307,27 @@ export default function Home() {
             ))}
           </div>
           <p className="processNote">Evaluation details—policy interface, checkpoints, task coverage, and reporting—are coordinated directly with the selected host site.</p>
+        </div>
+      </section>
+
+      <section className="buildSite" id="build-a-site">
+        <div className="shell">
+          <div className="sectionHeading row light">
+            <div><p className="eyebrow">PARTNER PLAYBOOK</p><h2>Build a new<br />RobotReplica <em>site.</em></h2></div>
+            <p>A partner site turns a robot and workspace into a maintained community benchmark. These five stages provide the starting framework; RobotReplica coordinates details with each host.</p>
+          </div>
+          <div className="buildSiteFlow">
+            {siteBuildingSteps.map(([number, title, description], index) => (
+              <article key={number}>
+                <div><span>{number}</span><i aria-hidden="true" /></div>
+                <div><p>STAGE {index + 1} OF 5</p><h3>{title}</h3><p>{description}</p>{number === "04" ? <a href="/vla-replica#scenes">See VLA-Replica scene references <Arrow /></a> : null}</div>
+              </article>
+            ))}
+          </div>
+          <div className="buildSiteCallout">
+            <div><span>READY TO HOST?</span><h3>Bring a new robot into the network.</h3><p>Tell us about your organization, robot platform, workspace, and the benchmark tasks you want to develop.</p></div>
+            <a className="button buildSiteButton" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20new%20site%20proposal">Discuss a partner site <Arrow /></a>
+          </div>
         </div>
       </section>
 
