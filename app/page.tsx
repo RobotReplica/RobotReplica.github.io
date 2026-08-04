@@ -114,7 +114,7 @@ const sites = [
     robot: "Franka Panda",
     benchmark: "RobotReplica Franka Panda site",
     image: "/franka-research-3-official.jpg",
-    imageAlt: "Close-up of the single-arm Franka Research 3 robot",
+    imageAlt: "Full view of a single-arm Franka Research 3 robot with gripper",
     imageCredit: ["Image: Franka Robotics", "https://franka.de/products-overview"],
     description:
       "A hosted Franka Panda evaluation site extending the network with a new reproducible manipulation benchmark.",
