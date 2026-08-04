@@ -155,7 +155,11 @@ export default function Home() {
               ))}
             </div>
             <div className="partnerMap">
-              <p><span>PARTNER NETWORK</span><b>Three sites across the United States</b></p>
+              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Three sites across the United States</b></p>
+              <div className="partnerMapIntro">
+                <p>Our current network includes three physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
+                <a href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20partner%20site%20inquiry">Become a partner <Arrow /></a>
+              </div>
               <div className="partnerMapCanvas">
                 <img src="/us-map-48states.svg?v=3" alt="Map of the contiguous United States with state boundaries" />
                 {sites.map((site) => (
