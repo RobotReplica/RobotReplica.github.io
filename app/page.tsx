@@ -113,9 +113,9 @@ const sites = [
     mapPosition: { left: "91%", top: "22%" },
     robot: "Franka Panda",
     benchmark: "RobotReplica Franka Panda site",
-    image: "/franka-panda-full.jpg",
-    imageAlt: "Full Franka research robot arm configurations",
-    imageCredit: ["Image: Franka Robotics", "https://franka.de/franka-research-3"],
+    image: "/franka-panda-single.png",
+    imageAlt: "Single Franka Panda seven-degree-of-freedom robot arm with gripper",
+    imageCredit: ["Image: EmPRISE Lab at Cornell", "https://emprise.cs.cornell.edu/people/"],
     description:
       "A hosted Franka Panda evaluation site extending the network with a new reproducible manipulation benchmark.",
     partnerRole: "Developing a Franka Panda site and a new suite of standardized manipulation tasks.",
