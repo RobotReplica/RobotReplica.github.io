@@ -2,95 +2,37 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "VLA-Replica | RobotReplica",
-  description: "The complete VLA-Replica benchmark hub: tasks, videos, leaderboards, setup documentation, data, checkpoints, and evaluation resources.",
+  description: "Tasks, videos, leaderboards, setup documentation, data, checkpoints, and hosted evaluation for the VLA-Replica SO-101 benchmark.",
 };
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
-
+const tasks = ["Put bread on plate", "Put bowl on coaster", "Stack blocks", "Collect blocks into box", "Fold towel", "Open oven", "Erase whiteboard", "Shake pepper n times", "Lift bowl n times", "Press button n times"];
+const methods = ["ACT", "DiT-D", "DiT-F", "SmolVLA", "X-VLA", "π₀", "π₀.₅"];
+const idAverage = ["18%", "16%", "12%", "26%", "14%", "34%", "54%"];
+const oodAverage = ["7.5%", "5%", "2.5%", "30%", "7.5%", "30%", "35%"];
+const idScores = [
+  ["40", "40", "40", "60", "40", "80", "80"], ["0", "0", "0", "20", "20", "60", "80"], ["0", "0", "0", "20", "0", "0", "40"], ["0", "20", "0", "0", "0", "0", "40"], ["40", "20", "20", "60", "60", "80", "100"], ["40", "60", "40", "40", "0", "20", "60"], ["20", "20", "20", "20", "0", "40", "40"], ["20", "0", "0", "0", "20", "20", "40"], ["20", "0", "0", "20", "0", "20", "40"], ["0", "0", "0", "20", "0", "20", "20"],
+];
 const resources = [
   ["Paper", "/vla-replica-materials/assets/pdf/VLAReplica.pdf", "Read the VLA-Replica paper"],
   ["Setup guide", "/vla-replica-materials/setup-docs/", "Build and calibrate the platform"],
-  ["Task reference", "/vla-replica-materials/setup-docs/task-reference/", "Review every ID and OOD task"],
-  ["Evaluation guide", "/vla-replica-materials/setup-docs/running-evaluations/", "Run the benchmark protocol"],
-  ["Rollout videos", "/vla-replica-materials/scene-videos/", "Browse results by policy and split"],
+  ["Task reference", "/vla-replica-materials/setup-docs/task-reference/", "Detailed ID and OOD definitions"],
+  ["Evaluation guide", "/vla-replica-materials/setup-docs/running-evaluations/", "Follow the evaluation protocol"],
   ["Model checkpoints", "/vla-replica-materials/model-checkpoints/", "Access published checkpoints"],
   ["Bill of materials", "/vla-replica-materials/setup-docs/bill-of-materials/", "Source the complete hardware setup"],
   ["Purchase links", "/vla-replica-materials/purchase-links/", "Find benchmark objects and parts"],
 ];
 
 export default function VLAReplicaPage() {
-  return (
-    <main className="vlaPage">
-      <nav className="nav shell" aria-label="VLA-Replica navigation">
-        <a className="brand" href="/" aria-label="RobotReplica home"><i />ROBOT<span>REPLICA</span></a>
-        <div className="navLinks"><a href="#overview">Overview</a><a href="#resources">Resources</a><a href="#full-project">Full project</a></div>
-        <a className="navCta" href="/">Back to network</a>
-      </nav>
-
-      <header className="vlaHero shell">
-        <div>
-          <p className="kicker">THE COMPLETE SO-101 BENCHMARK HUB</p>
-          <h1>VLA-Replica</h1>
-          <p className="vlaSubtitle">A low-cost, reproducible real-world benchmark for evaluating vision-language-action models—with every project resource now hosted inside RobotReplica.</p>
-          <div className="heroActions">
-            <a className="button primary" href="#full-project">Explore the full project <span>↓</span></a>
-            <a className="button outline" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20SO-101%20evaluation%20request">Request evaluation <Arrow /></a>
-          </div>
-        </div>
-        <figure className="vlaHeroImage">
-          <video controls autoPlay muted loop playsInline poster="/vla-replica-materials/assets/images/VLAReplica_overview.jpg">
-            <source src="/vla-replica-materials/assets/videos/VLAReplica.mp4" type="video/mp4" />
-          </video>
-          <figcaption>VLA-REPLICA OVERVIEW / SO-101 BENCHMARK</figcaption>
-        </figure>
-      </header>
-
-      <section className="vlaOverview" id="overview">
-        <div className="shell vlaSplit">
-          <div><p className="eyebrow">OVERVIEW</p><h2>A complete, replicable evaluation package.</h2></div>
-          <div className="vlaBody">
-            <p>VLA-Replica standardizes an affordable SO-101 robot, physical workspace, cameras, task objects, demonstrations, and evaluation protocol so real-world manipulation results can be reproduced across laboratories.</p>
-            <p>The benchmark contains 10 manipulation tasks, 50 expert demonstrations per task, 90 reference evaluation scenes, and separate in-distribution and out-of-distribution tracks.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="vlaBenchmark shell" id="resources">
-        <div className="sectionHeading row">
-          <div><p className="eyebrow">PROJECT MATERIALS</p><h2>Everything needed to<br />build, run, and <em>compare.</em></h2></div>
-          <p>The paper, local overview video, task galleries, setup documentation, evaluation instructions, leaderboards, and rollout-video index have been imported from the original project.</p>
-        </div>
-        <div className="vlaFacts"><article><b>10</b><span>real-world manipulation tasks</span></article><article><b>50</b><span>demonstrations per task</span></article><article><b>90</b><span>reference evaluation scenes</span></article><article><b>ID + OOD</b><span>evaluation tracks</span></article></div>
-        <div className="vlaResourceGrid">
-          {resources.map(([title, href, description]) => (
-            <a href={href} key={title}><span>{title}</span><p>{description}</p><Arrow /></a>
-          ))}
-          <a href="https://huggingface.co/datasets/HenryZhang/VLAReplica_SFT_data" target="_blank" rel="noreferrer"><span>Demonstration data</span><p>Download the training and fine-tuning dataset</p><Arrow /></a>
-          <a href="https://github.com/IRVLUTD/VLAReplica" target="_blank" rel="noreferrer"><span>Evaluation code</span><p>Use the maintained benchmark implementation</p><Arrow /></a>
-        </div>
-      </section>
-
-      <section className="vlaArchiveSection" id="full-project">
-        <div className="shell vlaArchiveHeading">
-          <div><p className="eyebrow">FULL VLA-REPLICA PROJECT</p><h2>Tasks, leaderboards, videos, and results.</h2></div>
-          <a className="button outline" href="/vla-replica-materials/" target="_blank">Open full-page version <Arrow /></a>
-        </div>
-        <div className="shell">
-          <iframe className="vlaArchive" src="/vla-replica-materials/index.html" title="Complete VLA-Replica project materials" loading="lazy" />
-        </div>
-      </section>
-
-      <section className="vlaEvaluation" id="evaluation">
-        <div className="shell vlaSplit">
-          <div><p className="eyebrow">HOSTED EVALUATION</p><h2>Evaluate on the UT Dallas SO-101 site.</h2></div>
-          <div className="vlaBody"><p>Send RobotReplica your policy or checkpoint, interface requirements, and desired benchmark track. The Intelligent Robotics and Vision Lab runs the maintained physical evaluation and reports the result.</p><div className="vlaLinks"><a className="button primary" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20SO-101%20evaluation%20request">Request an evaluation <Arrow /></a><a className="button text" href="/vla-replica-materials/index.html#leaderboard">Open leaderboard <Arrow /></a></div></div>
-        </div>
-      </section>
-
-      <footer className="footer shell vlaFooter">
-        <div><a className="brand" href="/"><i />ROBOT<span>REPLICA</span></a><p>VLA-Replica is maintained by the Intelligent Robotics and Vision Lab at UT Dallas.</p></div>
-        <div className="footerLinks"><a href="/">RobotReplica home</a><a href="/vla-replica-materials/setup-docs/">Setup guide</a><a href="https://github.com/RobotReplica">GitHub</a></div>
-      </footer>
-    </main>
-  );
+  return <main className="vlaPage">
+    <nav className="nav shell" aria-label="VLA-Replica navigation"><a className="brand" href="/" aria-label="RobotReplica home"><i />ROBOT<span>REPLICA</span></a><div className="navLinks"><a href="#overview">Overview</a><a href="#tasks">Tasks</a><a href="#leaderboard">Leaderboard</a><a href="#resources">Resources</a></div><a className="navCta" href="/">Back to network</a></nav>
+    <header className="vlaHero shell"><div><p className="kicker">THE SO-101 BENCHMARK</p><h1>VLA-Replica</h1><p className="vlaSubtitle">A low-cost, reproducible real-world benchmark for evaluating vision-language-action models, maintained as RobotReplica’s first evaluation site.</p><div className="heroActions"><a className="button primary" href="#tasks">Explore the benchmark <span>↓</span></a><a className="button outline" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20SO-101%20evaluation%20request">Request evaluation <Arrow /></a></div></div><figure className="vlaHeroImage"><video controls autoPlay muted loop playsInline poster="/vla-replica-materials/assets/images/VLAReplica_overview.jpg"><source src="/vla-replica-materials/assets/videos/VLAReplica.mp4" type="video/mp4" /></video><figcaption>VLA-REPLICA OVERVIEW / SO-101 BENCHMARK</figcaption></figure></header>
+    <section className="vlaOverview" id="overview"><div className="shell vlaSplit"><div><p className="eyebrow">OVERVIEW</p><h2>A complete, replicable evaluation package.</h2></div><div className="vlaBody"><p>VLA-Replica standardizes an affordable SO-101 robot, physical workspace, cameras, task objects, demonstrations, and evaluation protocol so real-world manipulation results can be reproduced across laboratories.</p><p>The benchmark contains 10 manipulation tasks, 50 expert demonstrations per task, 90 reference evaluation scenes, and separate in-distribution and out-of-distribution tracks.</p></div></div></section>
+    <section className="vlaBenchmark shell" id="tasks"><div className="sectionHeading row"><div><p className="eyebrow">BENCHMARK TASKS</p><h2>Ten tasks across<br />three capability <em>families.</em></h2></div><p>Pick-and-place, object interaction, and counting or memory tasks test both physical skill and instruction following. Every task has ID and OOD evaluation scenes.</p></div><img className="vlaWideImage" src="/vla-replica-materials/assets/images/tasks.png" alt="The ten VLA-Replica manipulation tasks with ID and OOD variations" /><div className="vlaTaskGrid">{tasks.map((task, index) => <article key={task}><span>{String(index + 1).padStart(2, "0")}</span><h3>{task}</h3><a href="/vla-replica-materials/setup-docs/task-reference/">Task details <Arrow /></a></article>)}</div></section>
+    <section className="vlaMediaSection"><div className="shell"><div className="vlaSplit vlaMediaIntro"><div><p className="eyebrow">DATA & SCENES</p><h2>From demonstrations to evaluation.</h2></div><div className="vlaBody"><p>Each task includes 50 expert demonstrations for training or fine-tuning. Evaluation uses 90 fixed reference scenes spanning familiar conditions and novel objects, colors, or counts.</p></div></div><div className="vlaMediaGrid"><figure><img src="/vla-replica-materials/assets/images/demonstrations.png" alt="Examples of VLA-Replica expert demonstrations" /><figcaption><b>500 expert demonstrations</b><span>50 examples for each of 10 tasks</span></figcaption></figure><figure><img src="/vla-replica-materials/assets/images/task01.png" alt="Example ID and OOD reference scenes for the bread task" /><figcaption><b>90 reference scenes</b><span>Standardized ID and OOD evaluation</span></figcaption></figure></div><div className="heroActions"><a className="button primary" href="https://huggingface.co/datasets/HenryZhang/VLAReplica_SFT_data" target="_blank" rel="noreferrer">Download dataset <Arrow /></a><a className="button outline" href="/vla-replica-materials/setup-docs/task-reference/">Browse all reference scenes <Arrow /></a></div></div></section>
+    <section className="vlaLeaderboard shell" id="leaderboard"><div className="sectionHeading row"><div><p className="eyebrow">LEADERBOARD</p><h2>Real-world policy<br /><em>performance.</em></h2></div><p>Success rates from five rollouts per task. π₀.₅ currently leads the aggregate ID and OOD evaluations. Open the full task table below for the per-task comparison.</p></div><div className="vlaScoreCards">{methods.map((method, i) => <article className={i === methods.length - 1 ? "leader" : ""} key={method}><span>{method}</span><b>{idAverage[i]}</b><small>ID average</small><strong>{oodAverage[i]}</strong><small>OOD average</small></article>)}</div><details className="vlaFullTable"><summary>View complete ID leaderboard by task <span>+</span></summary><div className="vlaTableWrap"><table><thead><tr><th>Task</th>{methods.map(m => <th key={m}>{m}</th>)}</tr></thead><tbody>{tasks.map((task, row) => <tr key={task}><th>{row + 1}. {task}</th>{idScores[row].map((score, col) => <td key={`${row}-${col}`}>{score}%</td>)}</tr>)}</tbody></table></div></details><div className="vlaLeaderboardActions"><a className="button primary" href="/vla-replica-materials/scene-videos/">Browse evaluation rollout videos <Arrow /></a><a className="button outline" href="mailto:robotreplica.org@gmail.com?subject=VLA-Replica%20leaderboard%20submission">Submit a method <Arrow /></a></div><img className="vlaTraining" src="/vla-replica-materials/assets/images/training_details.png" alt="Training and fine-tuning details for policies on the leaderboard" /></section>
+    <section className="vlaResources" id="resources"><div className="shell"><div className="vlaSplit"><div><p className="eyebrow">BUILD & RUN</p><h2>Everything needed to replicate the benchmark.</h2></div><div className="vlaBody"><p>A first-time builder assembled the setup in under one hour. Follow the step-by-step documentation, source the standard objects, and run the same evaluation protocol.</p></div></div><div className="vlaResourceGrid">{resources.map(([title, href, description]) => <a href={href} key={title}><span>{title}</span><p>{description}</p><Arrow /></a>)}<a href="https://github.com/IRVLUTD/VLAReplica" target="_blank" rel="noreferrer"><span>Evaluation code</span><p>Use the maintained benchmark implementation</p><Arrow /></a></div></div></section>
+    <section className="vlaEvaluation" id="evaluation"><div className="shell vlaSplit"><div><p className="eyebrow">HOSTED EVALUATION</p><h2>Evaluate on the UT Dallas SO-101 site.</h2></div><div className="vlaBody"><p>Send RobotReplica your policy or checkpoint, interface requirements, and desired benchmark track. The Intelligent Robotics and Vision Lab runs the maintained physical evaluation and reports the result.</p><div className="vlaLinks"><a className="button primary" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20SO-101%20evaluation%20request">Request an evaluation <Arrow /></a><a className="button text" href="/vla-replica-materials/assets/pdf/VLAReplica.pdf">Read the paper <Arrow /></a></div></div></div></section>
+    <footer className="footer shell vlaFooter"><div><a className="brand" href="/"><i />ROBOT<span>REPLICA</span></a><p>VLA-Replica is maintained by the Intelligent Robotics and Vision Lab at UT Dallas.</p></div><div className="footerLinks"><a href="/">RobotReplica home</a><a href="/vla-replica-materials/setup-docs/">Setup guide</a><a href="https://github.com/RobotReplica">GitHub</a></div></footer>
+  </main>;
 }
