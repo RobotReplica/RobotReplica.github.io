@@ -113,8 +113,8 @@ const sites = [
     mapPosition: { left: "91%", top: "22%" },
     robot: "Franka Panda",
     benchmark: "RobotReplica Franka Panda site",
-    image: "/franka-panda-mit.jpg",
-    imageAlt: "Franka seven-degree-of-freedom research robot arm",
+    image: "/franka-panda-full.jpg",
+    imageAlt: "Full Franka research robot arm configurations",
     imageCredit: ["Image: Franka Robotics", "https://franka.de/franka-research-3"],
     description:
       "A hosted Franka Panda evaluation site extending the network with a new reproducible manipulation benchmark.",
