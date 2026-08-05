@@ -322,7 +322,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <div className="leaderboardFoot"><span>Top 3 · success rate · 5 runs per task</span><a className="button leaderboardButton" href="https://irvlutd.github.io/VLAReplica/#leaderboard">View full leaderboard <Arrow /></a></div>
+                <div className="leaderboardFoot"><span>Top 3 · success rate · 5 runs per task</span><a className="button leaderboardButton" href="/vla-replica#leaderboard">View full leaderboard <Arrow /></a></div>
               </section>
             ) : null}
             </div>
