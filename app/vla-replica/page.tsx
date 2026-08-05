@@ -20,7 +20,7 @@ const quickLinks = [
   ["Model Checkpoints", "/vla-replica-materials/model-checkpoints/"], ["Purchase Links", "/vla-replica-materials/setup-docs/bill-of-materials/"],
   ["Setup Guide", "/vla-replica-materials/setup-docs/"],
 ];
-const sceneNames = ["Put bread on plate", "Put bowl on coaster", "Stack blocks", "Collect blocks", "Fold towel", "Open oven", "Erase whiteboard", "Shake pepper", "Lift bowl", "Press button"];
+const sceneNames = ["Put bread on plate", "Put bowl on coaster", "Stack blocks", "Fold towel", "Open oven", "Clean whiteboard", "Pour pepper", "Lift bowl", "Press button", "Collect blocks"];
 
 export default function VLAReplicaPage() {
   return <main className="vlaPage vlaPaperPage">
