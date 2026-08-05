@@ -176,15 +176,26 @@ export default function Home() {
       </nav>
 
       <header className="hero shell">
-        <div className="heroCopy">
-          <p className="kicker">A PHYSICAL BENCHMARK NETWORK FOR ROBOT MANIPULATION</p>
-          <h1>Your policy.<br />Our robot.<br /><em>One comparable result.</em></h1>
-          <p className="heroDefinition">
-            RobotReplica is a network of organizations that host standardized robot
-            manipulation benchmarks. Find a site with the same robot you use, send us
-            your policy, and we evaluate it on maintained real-world tasks.
-          </p>
-          <div className="heroPartners" aria-label="RobotReplica partner organizations">
+        <div className="heroStatement">
+          <div className="heroCopy">
+            <p className="kicker">A PHYSICAL BENCHMARK NETWORK FOR ROBOT MANIPULATION</p>
+            <h1>Your policy.<br />Our robot.<br /><em>One comparable result.</em></h1>
+            <p className="heroDefinition">
+              RobotReplica is a network of organizations that host standardized robot
+              manipulation benchmarks. Find a site with the same robot you use, send us
+              your policy, and we evaluate it on maintained real-world tasks.
+            </p>
+            <div className="heroActions">
+              <a className="button primary" href="#sites">View current sites <span>↓</span></a>
+              <a className="button text" href="#process">How evaluation works <Arrow /></a>
+            </div>
+          </div>
+          <figure className="heroVisual">
+            <img src="/og-network.png" alt="RobotReplica network connecting physical robot evaluation sites" />
+            <figcaption><span>A DISTRIBUTED PHYSICAL BENCHMARK NETWORK</span><span>MULTIPLE ROBOTS</span></figcaption>
+          </figure>
+        </div>
+        <div className="heroPartners" aria-label="RobotReplica partner organizations">
             <p>PARTNER ORGANIZATIONS &amp; PEOPLE</p>
             <div>
               {sites.map((site) => (
@@ -199,7 +210,7 @@ export default function Home() {
             <div className="partnerMap">
               <p><span>CURRENT ROBOTREPLICA SITES</span><b>Four sites across the United States</b></p>
               <div className="partnerMapIntro">
-                <p>Our current network includes three physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
+                <p>Our current network includes four physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
                 <a href="#build-a-site">Become a partner <Arrow /></a>
               </div>
               <div className="partnerMapCanvas">
@@ -227,16 +238,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </div>
-          <div className="heroActions">
-            <a className="button primary" href="#sites">View current sites <span>↓</span></a>
-            <a className="button text" href="#process">How evaluation works <Arrow /></a>
-          </div>
         </div>
-        <figure className="heroVisual">
-          <img src="/og-network.png" alt="RobotReplica network connecting physical robot evaluation sites" />
-          <figcaption><span>A DISTRIBUTED PHYSICAL BENCHMARK NETWORK</span><span>MULTIPLE ROBOTS</span></figcaption>
-        </figure>
       </header>
 
       <section className="overview" id="overview">
