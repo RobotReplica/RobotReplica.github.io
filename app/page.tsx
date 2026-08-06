@@ -376,7 +376,7 @@ export default function Home() {
 
       <footer className="footer shell">
         <div><a className="brand" href="#top"><i />ROBOT<span>REPLICA</span></a><p>Real robots. Maintained sites. Comparable results.</p></div>
-        <div className="footerLinks"><a href="/vla-replica">VLA-Replica</a><a href="https://www.gilabs.xyz/">GI Labs</a><a href="https://openarm.dev/">OpenArm</a><a href="https://github.com/RobotReplica">GitHub</a></div>
+        <div className="footerLinks"><a href="#sites">Current Sites</a><a href="/vla-replica">VLA-Replica</a><a href="#build-a-site">Build a Site</a><a href="https://github.com/RobotReplica">GitHub</a><a href="mailto:robotreplica.org@gmail.com">Contact</a></div>
         <div className="footerBottom"><span>© 2026 ROBOTREPLICA</span><span>A JOINT ROBOT MANIPULATION BENCHMARKING EFFORT</span><a href="#top">BACK TO TOP ↑</a></div>
       </footer>
     </main>
