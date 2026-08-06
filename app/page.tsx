@@ -81,21 +81,21 @@ const sites = [
     mapPosition: { left: "84%", top: "27%" },
     robot: "Tianji Marvin Arms",
     benchmark: "RobotReplica Marvin site",
-    image: "/tianji-marvin-arms.jpg",
-    imageAlt: "Tianji Marvin dual-arm robot system",
-    imageCredit: ["Image: TianJi", "https://en.tianjizn.com/products/marvin-series/"],
+    image: "/cornell-marvin-wuji-site.jpg",
+    imageAlt: "Cornell Tianji Marvin dual-arm evaluation setup equipped with two WUJI hands",
+    imageCredit: ["Image: GRILL at Cornell", "https://kuanfang.github.io/join-us.html"],
     description:
-      "A hosted Tianji Marvin dual-arm evaluation site for reproducible, force-aware manipulation benchmarks.",
+      "A hosted Tianji Marvin dual-arm evaluation site equipped with two WUJI hands for reproducible, force-aware manipulation benchmarks.",
     partnerRole: "Developing a Tianji Marvin dual-arm site and a new suite of standardized manipulation tasks.",
     taskSummary: {
       intro: "The team is developing a benchmark around the force-controlled, humanlike Marvin arm platform.",
       groups: [
-        ["Robot", "Dual 7-DoF humanlike arms · Full-joint torque sensing"],
+        ["Robot", "Dual 7-DoF humanlike arms · Two WUJI hands"],
         ["Control", "Full-force control · Adaptive impedance · Compliant interaction"],
         ["Benchmark", "Task suite and evaluation protocol in development"],
       ],
     },
-    facts: ["Tianji Marvin arms", "Full-force control", "In development"],
+    facts: ["Tianji Marvin arms", "Two WUJI hands", "In development"],
     maintainers: [
       { name: "Kuan Fang", image: "/maintainer-kuan-fang.jpg", url: "https://kuanfang.github.io/index.html" },
     ],
