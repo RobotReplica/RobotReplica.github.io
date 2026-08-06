@@ -49,9 +49,9 @@ const sites = [
     mapPosition: { left: "8%", top: "43%" },
     robot: "OpenArm",
     benchmark: "RobotReplica OpenArm",
-    image: "/openarm-cell.png",
-    imageAlt: "OpenArm standardized evaluation cell",
-    imageCredit: null,
+    image: "/openarm-site-rollout.jpg",
+    imageAlt: "OpenArm bimanual robot performing a manipulation rollout at the General Intelligence Labs site",
+    imageCredit: ["Image: General Intelligence Labs", "https://www.gilabs.xyz/"],
     description:
       "A hosted OpenArm evaluation site extending the network to bimanual, contact-rich manipulation.",
     partnerRole: "Developing the OpenArm site for reproducible bimanual and contact-rich evaluation.",
