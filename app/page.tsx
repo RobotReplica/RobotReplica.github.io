@@ -181,9 +181,10 @@ export default function Home() {
             <p className="kicker">A PHYSICAL BENCHMARK NETWORK FOR ROBOT MANIPULATION</p>
             <h1>Your policy.<br />Our robot.<br /><em>One comparable result.</em></h1>
             <p className="heroDefinition">
-              RobotReplica is a network of organizations that host standardized robot
-              manipulation benchmarks. Find a site with the same robot you use, send us
-              your policy, and we evaluate it on maintained real-world tasks.
+              RobotReplica is a non-commercial, community-led research initiative connecting
+              organizations that voluntarily host standardized robot manipulation benchmarks.
+              Find a participating site with the same robot you use, send us your policy, and
+              the site&apos;s volunteer team will evaluate it on maintained real-world tasks.
             </p>
             <div className="heroActions">
               <a className="button primary" href="#sites">View current sites <span>↓</span></a>
