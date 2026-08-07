@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 
 const evaluationSites = [
   { robot: "SO-101", host: "Intelligent Robotics and Vision Lab · UT Dallas", status: "Accepting evaluations", available: true },
@@ -13,6 +13,7 @@ export default function EvaluationForm() {
   const [selected, setSelected] = useState<string[]>([]);
   const [error, setError] = useState("");
   const [urlError, setUrlError] = useState("");
+  const robotSelectorRef = useRef<HTMLFieldSetElement>(null);
 
   useEffect(() => {
     const requested = new URLSearchParams(window.location.search).get("robots");
@@ -39,7 +40,11 @@ export default function EvaluationForm() {
   const submitRequest = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!selected.length) {
-      setError("Select at least one robot or site.");
+      setError("Please select at least one available robot before preparing your request.");
+      requestAnimationFrame(() => {
+        robotSelectorRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+        robotSelectorRef.current?.focus({ preventScroll: true });
+      });
       return;
     }
 
@@ -72,8 +77,9 @@ export default function EvaluationForm() {
 
   return (
     <form className="evaluationForm" onSubmit={submitRequest}>
-      <fieldset className="robotSelector">
+      <fieldset ref={robotSelectorRef} className={`robotSelector${error ? " hasError" : ""}`} tabIndex={-1} aria-invalid={error ? "true" : "false"} aria-describedby={error ? "robot-selection-error" : undefined}>
         <legend><span>01</span><b>Select one or more robots <abbr className="requiredMark" title="Required">*</abbr></b><small>Choose every compatible site. We will coordinate one request across the selected teams.</small></legend>
+        {error ? <p className="formError" id="robot-selection-error" role="alert">{error}</p> : null}
         <div className="robotOptions">
           {evaluationSites.map((site) => {
             const checked = selected.includes(site.robot);
@@ -85,7 +91,6 @@ export default function EvaluationForm() {
             );
           })}
         </div>
-        {error ? <p className="formError" role="alert">{error}</p> : null}
       </fieldset>
 
       <fieldset>
