@@ -184,9 +184,11 @@ export default function Home() {
             <p className="heroDefinition">
               RobotReplica is a non-commercial, community-led research initiative connecting
               organizations that voluntarily host standardized robot manipulation benchmarks.
-              Find a participating site with the same robot you use, send us your policy, and
-              the site&apos;s volunteer team will evaluate it on maintained real-world tasks.
             </p>
+            <div className="heroPaths" aria-label="Ways policies are evaluated">
+              <article><span>01</span><div><b>Submit your policy.</b><p>Choose a participating site with matching robot hardware. Its volunteer team will evaluate your policy on maintained real-world tasks.</p></div></article>
+              <article><span>02</span><div><b>Benchmark public policies.</b><p>RobotReplica also evaluates compatible publicly released policies and checkpoints, then maintains verified leaderboards for each benchmark site.</p></div></article>
+            </div>
             <div className="heroActions">
               <a className="button primary" href="#sites">View current sites <span>↓</span></a>
               <a className="button text" href="#process">How evaluation works <Arrow /></a>
