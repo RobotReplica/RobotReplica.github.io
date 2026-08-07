@@ -258,8 +258,8 @@ export default function Home() {
           </div>
           <div className="overviewGrid">
             <article><span>01</span><h3>Physical benchmark sites</h3><p>Each partner maintains a robot, workspace, task objects, cameras, and an evaluation protocol.</p></article>
-            <article><span>02</span><h3>Robot-matched evaluation</h3><p>You choose the site with the same robot as your system. The site runs your policy for you.</p></article>
-            <article><span>03</span><h3>Verified leaderboards</h3><p>Every robot and site has its own board, keeping scores comparable and evidence traceable.</p></article>
+            <article><span>02</span><h3>Robot-matched evaluation</h3><p>Partner sites evaluate submitted policies and compatible publicly released policies on matching robot hardware.</p></article>
+            <article><span>03</span><h3>Verified leaderboards</h3><p>RobotReplica maintains a board for each benchmark site using verified results from both evaluation paths.</p></article>
           </div>
           <div className="distinction">
             <b>THE ROBOTREPLICA MODEL</b>
@@ -271,7 +271,7 @@ export default function Home() {
       <section className="sites shell" id="sites">
         <div className="sectionHeading row">
           <div><p className="eyebrow">CURRENT SITES</p><h2>Start with the robot<br />you already <em>use.</em></h2></div>
-          <p>Four organizations are building the first RobotReplica sites. Each site owns its hardware, tasks, evaluation process, and robot-specific leaderboard.</p>
+          <p>Four organizations are building the first RobotReplica sites. Each site operates its hardware, tasks, and evaluation process; RobotReplica maintains the verified robot-specific leaderboards.</p>
         </div>
         <div className="siteStack">
           {sites.map((site) => (
@@ -337,7 +337,7 @@ export default function Home() {
       <section className="process" id="process">
         <div className="shell">
           <div className="sectionHeading centered narrow">
-            <p className="eyebrow">HOW IT WORKS</p>
+            <p className="eyebrow">SUBMITTED-POLICY WORKFLOW</p>
             <h2>From your model<br />to a <em>verified score.</em></h2>
           </div>
           <div className="steps">
