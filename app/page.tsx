@@ -66,6 +66,7 @@ const sites = [
     facts: ["Bimanual platform", "Open-source hardware", "Protocol in development"],
     maintainers: [
       { name: "Shumo Chu", image: "/maintainer-shumo-chu.jpg", url: "https://www.shumochu.com/" },
+      { name: "Haichen Shen", image: "/maintainer-haichen-shen.jpg", url: "https://haichen.xyz/" },
     ],
     primary: ["Meet the host", "https://www.gilabs.xyz/"],
     secondary: ["Explore OpenArm", "https://openarm.dev/"],
