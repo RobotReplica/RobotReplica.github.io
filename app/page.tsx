@@ -35,7 +35,7 @@ const sites = [
     primary: ["Site details", "/vla-replica"],
     secondary: [
       "Request evaluation",
-      "mailto:robotreplica.org@gmail.com?subject=RobotReplica%20SO-101%20evaluation%20request",
+      "/request-evaluation?robots=SO-101",
     ],
   },
   {
@@ -173,7 +173,7 @@ export default function Home() {
           <a href="#build-a-site">Build a site</a>
           <a href="#leaderboards">Leaderboards</a>
         </div>
-        <a className="navCta" href="#sites">Find a site</a>
+        <a className="navCta" href="/request-evaluation">Request evaluations</a>
       </nav>
 
       <header className="hero shell">
@@ -190,8 +190,8 @@ export default function Home() {
               <article><span>02</span><div><b>Benchmark public policies.</b><p>RobotReplica also evaluates compatible publicly released policies and checkpoints, then maintains verified leaderboards for each benchmark site.</p></div></article>
             </div>
             <div className="heroActions">
-              <a className="button primary" href="#sites">View current sites <span>↓</span></a>
-              <a className="button text" href="#process">How evaluation works <Arrow /></a>
+              <a className="button primary" href="/request-evaluation">Request evaluations <Arrow /></a>
+              <a className="button text" href="#sites">View current sites <span>↓</span></a>
             </div>
           </div>
           <figure className="heroVisual">
