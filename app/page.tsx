@@ -173,7 +173,10 @@ export default function Home() {
           <a href="#build-a-site">Build a site</a>
           <a href="#leaderboards">Leaderboards</a>
         </div>
-        <a className="navCta" href="/request-evaluation">Request evaluations</a>
+        <div className="navActions">
+          <a className="navCta" href="/propose-site">Propose a site</a>
+          <a className="navCta" href="/request-evaluation">Request evaluations</a>
+        </div>
       </nav>
 
       <header className="hero shell">
@@ -191,6 +194,7 @@ export default function Home() {
             </div>
             <div className="heroActions">
               <a className="button primary" href="/request-evaluation">Request evaluations <Arrow /></a>
+              <a className="button primary" href="/propose-site">Propose a site <Arrow /></a>
               <a className="button text" href="#sites">View current sites <span>↓</span></a>
             </div>
           </div>
@@ -365,21 +369,14 @@ export default function Home() {
           </div>
           <div className="buildSiteCallout">
             <div><span>READY TO HOST?</span><h3>Bring a new robot into the network.</h3><p>Tell us about your organization, robot platform, workspace, and the benchmark tasks you want to develop.</p></div>
-            <a className="button buildSiteButton" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20new%20site%20proposal">Discuss a partner site <Arrow /></a>
+            <a className="button buildSiteButton" href="/propose-site">Propose a partner site <Arrow /></a>
           </div>
-        </div>
-      </section>
-
-      <section className="join">
-        <div className="shell joinInner">
-          <div><p className="eyebrow">EXPAND THE NETWORK</p><h2>Operate a robot?<br /><em>Host a site.</em></h2></div>
-          <div><p>We are looking for organizations that can maintain a reproducible robot setup and evaluate community policies. Help bring a new embodiment into RobotReplica.</p><a className="button dark" href="mailto:robotreplica.org@gmail.com?subject=RobotReplica%20benchmark%20site%20proposal">Propose a site <Arrow /></a></div>
         </div>
       </section>
 
       <footer className="footer shell">
         <div><a className="brand" href="#top"><i />ROBOT<span>REPLICA</span></a><p>Real robots. Maintained sites. Comparable results.</p></div>
-        <div className="footerLinks"><a href="#sites">Current Sites</a><a href="/vla-replica">VLA-Replica</a><a href="#build-a-site">Build a Site</a><a href="https://github.com/RobotReplica">GitHub</a><a href="mailto:robotreplica.org@gmail.com">Contact</a></div>
+        <div className="footerLinks"><a href="#sites">Current Sites</a><a href="#build-a-site">Build a Site</a><a href="https://github.com/RobotReplica">GitHub</a><a href="mailto:robotreplica.org@gmail.com">Contact</a></div>
         <div className="footerBottom"><span>© 2026 ROBOTREPLICA</span><span>A JOINT ROBOT MANIPULATION BENCHMARKING EFFORT</span><a href="#top">BACK TO TOP ↑</a></div>
       </footer>
     </main>
