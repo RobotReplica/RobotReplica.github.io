@@ -114,9 +114,9 @@ const sites = [
     mapPosition: { left: "91%", top: "22%" },
     robot: "Franka Panda",
     benchmark: "RobotReplica Franka Panda site",
-    image: "/franka-research-3-official.jpg",
-    imageAlt: "Full view of a single-arm Franka Research 3 robot with gripper",
-    imageCredit: ["Image: Franka Robotics", "https://franka.de/products-overview"],
+    image: "/mit-franka-panda.png",
+    imageAlt: "Franka Panda arm installed in the MIT benchmark workspace",
+    imageCredit: ["Image: CDFG at MIT", "https://cdfg.mit.edu/"],
     description:
       "A hosted Franka Panda evaluation site extending the network with a new reproducible manipulation benchmark.",
     partnerRole: "Developing a Franka Panda site and a new suite of standardized manipulation tasks.",
@@ -169,6 +169,7 @@ export default function Home() {
         <div className="navLinks">
           <a href="#overview">Overview</a>
           <a href="#sites">Current sites</a>
+          <a href="/policies">Policy registry</a>
           <a href="#process">How it works</a>
           <a href="#build-a-site">Build a site</a>
           <a href="#leaderboards">Leaderboards</a>
@@ -338,6 +339,20 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="homepagePolicies" aria-labelledby="homepage-policies-title">
+        <div className="shell homepagePoliciesInner">
+          <div>
+            <p className="eyebrow">POLICY REGISTRY</p>
+            <h2 id="homepage-policies-title">Discover featured<br /><em>robot policies.</em></h2>
+          </div>
+          <div className="homepagePoliciesBody">
+            <p>Explore a curated directory of public robot policies and foundation models. Inclusion is for discovery and does not imply RobotReplica evaluation or hardware compatibility.</p>
+            <ul aria-label="Examples from the Policy Registry"><li>Xiaomi-Robotics-1</li><li>Qwen-RobotManip</li><li>GR00T N1.7</li><li>SmolVLA</li></ul>
+            <a className="button primary" href="/policies">Explore featured policies <Arrow /></a>
+          </div>
+        </div>
+      </section>
+
       <section className="process" id="process">
         <div className="shell">
           <div className="sectionHeading centered narrow">
@@ -376,7 +391,7 @@ export default function Home() {
 
       <footer className="footer shell">
         <div><a className="brand" href="#top"><i />ROBOT<span>REPLICA</span></a><p>Real robots. Maintained sites. Comparable results.</p></div>
-        <div className="footerLinks"><a href="#sites">Current Sites</a><a href="#build-a-site">Build a Site</a><a href="https://github.com/RobotReplica">GitHub</a><a href="mailto:robotreplica.org@gmail.com">Contact</a></div>
+        <div className="footerLinks"><a href="#sites">Current Sites</a><a href="/policies">Policy Registry</a><a href="#build-a-site">Build a Site</a><a href="https://github.com/RobotReplica">GitHub</a><a href="mailto:robotreplica.org@gmail.com">Contact</a></div>
         <div className="footerBottom"><span>© 2026 ROBOTREPLICA</span><span>A JOINT ROBOT MANIPULATION BENCHMARKING EFFORT</span><a href="#top">BACK TO TOP ↑</a></div>
       </footer>
     </main>
