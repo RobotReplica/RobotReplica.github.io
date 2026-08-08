@@ -25,6 +25,15 @@ const policies = [
     links: [["Project", "https://qwen.ai/blog?id=qwen-robotmanip"], ["Official repository", "https://github.com/QwenLM/Qwen-RobotManip"], ["Paper", "https://arxiv.org/abs/2606.17846"]],
   },
   {
+    name: "MolmoAct 2",
+    organization: "Ai2",
+    year: "2026",
+    category: "Action reasoning foundation model",
+    summary: "An open 5B robot-control model that pairs the Molmo 2-ER embodied-reasoning backbone with a flow-matching continuous action expert, with released weights, training data, code, and LeRobot integration.",
+    tags: ["Open weights & data", "3D reasoning", "LeRobot"],
+    links: [["Project", "https://allenai.org/blog/molmoact2"], ["Code", "https://github.com/allenai/molmoact2"], ["Models", "https://huggingface.co/collections/allenai/molmoact2-models"], ["Paper", "https://arxiv.org/abs/2605.02881"]],
+  },
+  {
     name: "π₀.₅",
     organization: "Physical Intelligence",
     year: "2025",
