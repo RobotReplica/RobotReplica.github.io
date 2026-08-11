@@ -334,8 +334,8 @@ export default function Home() {
                 </div>
                 <div className="siteActions">
                   <a className="button primary" href={site.primary[1]}>{site.primary[0]} <Arrow /></a>
-                  <a className={`button ${"tertiary" in site ? "primary" : "outline"}`} href={site.secondary[1]}>{site.secondary[0]} <Arrow /></a>
-                  {"tertiary" in site ? <a className="button outline" href={site.tertiary[1]}>{site.tertiary[0]} <Arrow /></a> : null}
+                  <a className={`button ${site.tertiary ? "primary" : "outline"}`} href={site.secondary[1]}>{site.secondary[0]} <Arrow /></a>
+                  {site.tertiary ? <a className="button outline" href={site.tertiary[1]}>{site.tertiary[0]} <Arrow /></a> : null}
                 </div>
               </div>
             </article>
