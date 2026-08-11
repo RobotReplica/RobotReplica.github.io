@@ -108,14 +108,16 @@ const sites = [
     status: "In development",
     host: "Computational Design and Fabrication Group @ MIT",
     hostUrl: "https://cdfg.mit.edu/",
-    shortHost: "CDFG · MIT",
+    coHost: "Perceptual Science Group @ MIT",
+    coHostUrl: "https://persci.mit.edu/",
+    shortHost: "CDFG + Persci · MIT",
     logo: "/logo-mit-cdfg.png",
     location: "Cambridge, Massachusetts",
     mapPosition: { left: "91%", top: "22%" },
     robot: "Franka Panda",
     benchmark: "RobotReplica Franka Panda site",
-    image: "/mit-franka-panda.png",
-    imageAlt: "Franka Panda arm installed in the MIT benchmark workspace",
+    image: "/mit-franka-panda-workspace.jpeg",
+    imageAlt: "Franka Panda arm installed over the optical-table workspace at MIT",
     imageCredit: ["Image: CDFG at MIT", "https://cdfg.mit.edu/"],
     description:
       "A hosted Franka Panda evaluation site extending the network with a new reproducible manipulation benchmark.",
@@ -131,10 +133,12 @@ const sites = [
     facts: ["Franka Panda arm", "MIT CSAIL", "In development"],
     maintainers: [
       { name: "Zhiyang (Frank) Dou", image: "/maintainer-frank-dou.webp", url: "https://people.csail.mit.edu/frankzydou/" },
+      { name: "Yuxiang Ma", image: "/maintainer-yuxiang-ma.png", url: "https://yuxiang-ma.github.io/" },
       { name: "Wojciech Matusik", image: "/maintainer-wojciech-matusik.jpg", url: "https://cdfg.mit.edu/wojciech" },
     ],
     primary: ["Visit CDFG", "https://cdfg.mit.edu/"],
-    secondary: ["Explore Franka", "https://franka.de/franka-research-3"],
+    secondary: ["Visit Persci", "https://persci.mit.edu/"],
+    tertiary: ["Explore Franka", "https://franka.de/franka-research-3"],
   },
 ];
 
@@ -209,7 +213,22 @@ export default function Home() {
             <div>
               {sites.map((site) => (
                 <article className="heroPartner" key={site.host}>
-                  <a className="heroPartnerOrg" href={site.hostUrl} target="_blank" rel="noreferrer"><img src={site.logo} alt="" /><span><b>{site.shortHost}</b><small>{site.location}</small></span></a>
+                  {"coHost" in site ? (
+                    <div className="heroPartnerOrg">
+                      <img src={site.logo} alt="" />
+                      <span>
+                        <b className="heroPartnerOrgLinks">
+                          <a href={site.hostUrl} target="_blank" rel="noreferrer">CDFG</a>
+                          <i> + </i>
+                          <a href={site.coHostUrl} target="_blank" rel="noreferrer">Persci</a>
+                          <i> · MIT</i>
+                        </b>
+                        <small>{site.location}</small>
+                      </span>
+                    </div>
+                  ) : (
+                    <a className="heroPartnerOrg" href={site.hostUrl} target="_blank" rel="noreferrer"><img src={site.logo} alt="" /><span><b>{site.shortHost}</b><small>{site.location}</small></span></a>
+                  )}
                   <div className="heroPartnerPeople">{site.maintainers.map((person) => (
                     <a href={person.url} key={person.name} target="_blank" rel="noreferrer" title={person.name}><img src={person.image} alt={person.name} /><span>{person.name}</span></a>
                   ))}</div>
@@ -224,23 +243,27 @@ export default function Home() {
               </div>
               <div className="partnerMapCanvas">
                 <img src="/us-map-48states.svg?v=3" alt="Map of the contiguous United States with state boundaries" />
-                {sites.map((site) => (
-                  <a
-                    className="mapMarker"
-                    href={site.hostUrl}
-                    key={site.host}
-                    style={site.mapPosition}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={`${site.shortHost}, ${site.location}`}
-                  >
+                {sites.map((site) => "coHost" in site ? (
+                  <div className="mapMarker" key={site.host} style={site.mapPosition} aria-label={`CDFG and Persci, ${site.location}`}>
+                    <i aria-hidden="true" />
+                    <span>
+                      <b className="mapMarkerLinks"><a href={site.hostUrl} target="_blank" rel="noreferrer">CDFG</a><em> + </em><a href={site.coHostUrl} target="_blank" rel="noreferrer">Persci</a><em> · MIT</em></b>
+                      <small>{site.location}</small>
+                    </span>
+                  </div>
+                ) : (
+                  <a className="mapMarker" href={site.hostUrl} key={site.host} style={site.mapPosition} target="_blank" rel="noreferrer" aria-label={`${site.shortHost}, ${site.location}`}>
                     <i aria-hidden="true" />
                     <span><b>{site.shortHost}</b><small>{site.location}</small></span>
                   </a>
                 ))}
               </div>
               <div className="partnerMapList">
-                {sites.map((site) => (
+                {sites.map((site) => "coHost" in site ? (
+                  <div className="partnerMapListItem" key={site.host}>
+                    <i aria-hidden="true" /><span><b className="mapMarkerLinks"><a href={site.hostUrl} target="_blank" rel="noreferrer">CDFG</a><em> + </em><a href={site.coHostUrl} target="_blank" rel="noreferrer">Persci</a><em> · MIT</em></b><small>{site.location}</small></span>
+                  </div>
+                ) : (
                   <a href={site.hostUrl} key={site.host} target="_blank" rel="noreferrer">
                     <i aria-hidden="true" /><span><b>{site.shortHost}</b><small>{site.location}</small></span>
                   </a>
@@ -289,7 +312,7 @@ export default function Home() {
               </div>
               <div className="siteInfo">
                 <div className="siteStatus"><span className={site.status === "Accepting evaluations" ? "live" : "planned"}>● {site.status}</span><span>{site.location}</span></div>
-                <p className="host"><a href={site.hostUrl} target="_blank" rel="noreferrer">{site.host} <Arrow /></a></p>
+                <p className="host"><a href={site.hostUrl} target="_blank" rel="noreferrer">{site.host} <Arrow /></a>{"coHost" in site ? <><span className="hostJoin"> + </span><a href={site.coHostUrl} target="_blank" rel="noreferrer">{site.coHost} <Arrow /></a></> : null}</p>
                 <h3>{site.robot}</h3>
                 <p className="benchmarkName">{site.benchmark}</p>
                 <p className="siteDescription">{site.description}</p>
@@ -311,7 +334,8 @@ export default function Home() {
                 </div>
                 <div className="siteActions">
                   <a className="button primary" href={site.primary[1]}>{site.primary[0]} <Arrow /></a>
-                  <a className="button outline" href={site.secondary[1]}>{site.secondary[0]} <Arrow /></a>
+                  <a className={`button ${"tertiary" in site ? "primary" : "outline"}`} href={site.secondary[1]}>{site.secondary[0]} <Arrow /></a>
+                  {"tertiary" in site ? <a className="button outline" href={site.tertiary[1]}>{site.tertiary[0]} <Arrow /></a> : null}
                 </div>
               </div>
             </article>
