@@ -134,6 +134,7 @@ const sites = [
     maintainers: [
       { name: "Zhiyang (Frank) Dou", image: "/maintainer-frank-dou.webp", url: "https://people.csail.mit.edu/frankzydou/" },
       { name: "Yuxiang Ma", image: "/maintainer-yuxiang-ma.png", url: "https://yuxiang-ma.github.io/" },
+      { name: "Edward Adelson", image: "/maintainer-edward-adelson.png", url: "https://persci.mit.edu/people/adelson/" },
       { name: "Wojciech Matusik", image: "/maintainer-wojciech-matusik.jpg", url: "https://cdfg.mit.edu/wojciech" },
     ],
     primary: ["Visit CDFG", "https://cdfg.mit.edu/"],
