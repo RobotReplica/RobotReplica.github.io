@@ -67,6 +67,7 @@ const sites = [
     maintainers: [
       { name: "Shumo Chu", image: "/maintainer-shumo-chu.jpg", url: "https://www.shumochu.com/" },
       { name: "Haichen Shen", image: "/maintainer-haichen-shen.jpg", url: "https://haichen.xyz/" },
+      { name: "Grant Gao", image: "/maintainer-grant-gao.png", url: "https://www.linkedin.com/in/grant221/" },
     ],
     primary: ["Meet the host", "https://www.gilabs.xyz/"],
     secondary: ["Explore OpenArm", "https://openarm.dev/"],
