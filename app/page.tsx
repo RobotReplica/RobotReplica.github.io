@@ -99,6 +99,7 @@ const sites = [
     },
     facts: ["Tianji Marvin arms", "Two WUJI hands", "In development"],
     maintainers: [
+      { name: "Yunhao Cao", image: "/maintainer-yunhao-cao.jpeg", url: "https://www.quantumcookie.xyz/" },
       { name: "Kuan Fang", image: "/maintainer-kuan-fang.jpg", url: "https://kuanfang.github.io/index.html" },
     ],
     primary: ["Explore Marvin", "https://en.tianjizn.com/products/marvin-series/"],
