@@ -7,6 +7,7 @@ const evaluationSites = [
   { robot: "OpenArm", host: "General Intelligence Labs", status: "In development · coming soon", available: false },
   { robot: "Tianji Marvin Arms", host: "GRILL · Cornell University", status: "In development · coming soon", available: false },
   { robot: "Franka Panda", host: "CDFG · MIT", status: "In development · coming soon", available: false },
+  { robot: "AgileX PiPER", host: "PRACTICE Lab · UCLA", status: "In development · coming soon", available: false },
 ];
 
 export default function EvaluationForm() {
