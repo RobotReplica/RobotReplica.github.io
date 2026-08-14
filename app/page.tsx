@@ -143,6 +143,39 @@ const sites = [
     secondary: ["Visit Persci", "https://persci.mit.edu/"],
     tertiary: ["Explore Franka", "https://franka.de/franka-research-3"],
   },
+  {
+    number: "SITE 05",
+    status: "In development",
+    host: "PRACTICE Lab @ UCLA",
+    hostUrl: "https://practice-lab-ucla.github.io/",
+    shortHost: "PRACTICE · UCLA",
+    logo: "/logo-practice-ucla.png",
+    location: "Los Angeles, California",
+    mapPosition: { left: "11%", top: "61%" },
+    robot: "AgileX PiPER",
+    benchmark: "RobotReplica PiPER site",
+    image: "/ucla-piper-workspace.jpg",
+    imageAlt: "AgileX PiPER robot arm in the PRACTICE Lab workspace at UCLA",
+    imageCredit: ["Video frame: PRACTICE Lab at UCLA", "https://practice-lab-ucla.github.io/"],
+    description:
+      "A UCLA-hosted PiPER evaluation site extending the network with a reproducible manipulation benchmark for the compact robot arm.",
+    partnerRole: "Developing a PiPER site and a new suite of standardized manipulation tasks at UCLA.",
+    taskSummary: {
+      intro: "The PRACTICE Lab team is developing the workspace, task suite, scene specifications, and evaluation protocol for its PiPER robot.",
+      groups: [
+        ["Robot", "AgileX PiPER robot arm"],
+        ["Workspace", "Standardized cameras · Repeatable scenes · Controlled setup"],
+        ["Benchmark", "Task suite and evaluation protocol in development"],
+      ],
+    },
+    facts: ["AgileX PiPER", "UCLA", "In development"],
+    maintainers: [
+      { name: "Qizhao Chen", image: "/maintainer-qizhao-chen.webp", url: "https://practice-lab-ucla.github.io/people/qizhao_chen/" },
+      { name: "Anushri Dixit", image: "/maintainer-anushri-dixit.png", url: "https://practice-lab-ucla.github.io/people/anushri_dixit/" },
+    ],
+    primary: ["Visit PRACTICE Lab", "https://practice-lab-ucla.github.io/"],
+    secondary: ["Explore PiPER", "https://global.agilex.ai/products/piper"],
+  },
 ];
 
 const steps = [
@@ -239,9 +272,9 @@ export default function Home() {
               ))}
             </div>
             <div className="partnerMap">
-              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Four sites across the United States</b></p>
+              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Five sites across the United States</b></p>
               <div className="partnerMapIntro">
-                <p>Our current network includes four physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
+                <p>Our current network includes five physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
                 <a href="#build-a-site">Become a partner <Arrow /></a>
               </div>
               <div className="partnerMapCanvas">
@@ -302,7 +335,7 @@ export default function Home() {
       <section className="sites shell" id="sites">
         <div className="sectionHeading row">
           <div><p className="eyebrow">CURRENT SITES</p><h2>Start with the robot<br />you already <em>use.</em></h2></div>
-          <p>Four organizations are building the first RobotReplica sites. Each site operates its hardware, tasks, and evaluation process; RobotReplica maintains the verified robot-specific leaderboards.</p>
+          <p>Five organizations are building the first RobotReplica sites. Each site operates its hardware, tasks, and evaluation process; RobotReplica maintains the verified robot-specific leaderboards.</p>
         </div>
         <div className="siteStack">
           {sites.map((site) => (
