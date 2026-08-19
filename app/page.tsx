@@ -262,9 +262,10 @@ export default function Home() {
               RobotReplica is a non-commercial, community-led research initiative connecting
               organizations that voluntarily host standardized robot manipulation benchmarks.
             </p>
-            <div className="heroPaths" aria-label="Ways policies are evaluated">
-              <article><span>01</span><div><b>Submit your policy.</b><p>Choose a participating site with matching robot hardware. Its volunteer team will evaluate your policy on maintained real-world tasks.</p></div></article>
-              <article><span>02</span><div><b>Benchmark public policies.</b><p>RobotReplica also evaluates compatible publicly released policies and checkpoints, then maintains verified leaderboards for each benchmark site.</p></div></article>
+            <div className="heroPaths" aria-labelledby="hero-paths-title">
+              <div className="heroPathsHeading"><span>CORE ACTIVITIES</span><h2 id="hero-paths-title">What RobotReplica does</h2></div>
+              <article><span>01</span><div><small>FOR POLICY DEVELOPERS</small><b>Evaluate submitted policies.</b><p>Researchers submit a policy to a site with matching robot hardware. The volunteer site team runs it on maintained real-world tasks.</p></div></article>
+              <article><span>02</span><div><small>FOR THE ROBOTICS COMMUNITY</small><b>Benchmark public policies.</b><p>RobotReplica proactively evaluates compatible public policies and checkpoints, verifies the results, and maintains robot-specific leaderboards.</p></div></article>
             </div>
             <div className="heroActions">
               <a className="button primary" href="/request-evaluation">Request evaluations <Arrow /></a>

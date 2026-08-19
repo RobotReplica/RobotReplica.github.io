@@ -62,10 +62,12 @@
 /* Pair the network artwork with the core promise, then give partner details the full page width. */
 .hero{display:block;min-height:0}
 .heroStatement{display:grid;grid-template-columns:1.5fr 1fr;gap:72px;align-items:center}
-.heroPaths{display:grid;grid-template-columns:1fr;gap:12px;margin:26px 0 28px}
-.heroPaths article{display:grid;grid-template-columns:34px 1fr;gap:14px;padding:18px 20px;border:1px solid var(--line);border-radius:7px;background:var(--paper)}
-.heroPaths article>span{color:var(--coral);font:700 10px var(--font-geist-mono);letter-spacing:.08em;padding-top:3px}
-.heroPaths b{display:block;color:var(--navy);font-size:15px;margin-bottom:7px}
+.heroPaths{display:grid;grid-template-columns:1fr;gap:10px;margin:26px 0 28px;padding:18px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--navy2));box-shadow:0 14px 34px rgba(16,37,83,.14)}
+.heroPathsHeading{padding:2px 3px 8px}.heroPathsHeading>span{display:block;margin-bottom:5px;color:#9dbbec;font:700 8px var(--font-geist-mono);letter-spacing:.13em}.heroPathsHeading h2{margin:0;color:white;font-size:22px;line-height:1.1;letter-spacing:-.025em}
+.heroPaths article{display:grid;grid-template-columns:40px 1fr;gap:15px;padding:18px 20px;border:1px solid rgba(255,255,255,.48);border-radius:7px;background:white}
+.heroPaths article>span{display:flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:50%;background:#fff0ed;color:var(--coral);font:700 9px var(--font-geist-mono);letter-spacing:.05em}
+.heroPaths article small{display:block;margin-bottom:5px;color:var(--blue);font:700 8px var(--font-geist-mono);letter-spacing:.1em}
+.heroPaths b{display:block;color:var(--navy);font-size:16px;margin-bottom:7px}
 .heroPaths p{margin:0;color:#687381;font-size:13px;line-height:1.55}
 .heroPartners{max-width:none;margin-top:72px;margin-bottom:0}
 .heroPartners>div:first-of-type{grid-template-columns:repeat(4,1fr)}
