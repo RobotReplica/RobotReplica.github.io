@@ -176,6 +176,39 @@ const sites = [
     primary: ["Visit PRACTICE Lab", "https://practice-lab-ucla.github.io/"],
     secondary: ["Explore PiPER", "https://global.agilex.ai/products/piper"],
   },
+  {
+    number: "SITE 06",
+    status: "In development",
+    host: "Intelligent Robotics and Interactive Systems Lab @ Arizona State University",
+    hostUrl: "https://irislab.tech/",
+    shortHost: "IRIS · ASU",
+    logo: "/logo-iris-asu.png",
+    location: "Tempe, Arizona",
+    mapPosition: { left: "18%", top: "62%" },
+    robot: "Allegro Hand",
+    benchmark: "RobotReplica Allegro Hand site",
+    image: "/asu-iris-allegro-workspace.jpg",
+    imageAlt: "Allegro Hand in-hand manipulation benchmark workspace at the IRIS Lab at ASU",
+    imageCredit: ["Image: IRIS Lab at ASU", "https://irislab.tech/"],
+    description:
+      "An ASU-hosted Allegro Hand evaluation site for reproducible in-hand manipulation and object reorientation benchmarks.",
+    partnerRole: "Developing an Allegro Hand site and a standardized benchmark for in-hand object reorientation.",
+    taskSummary: {
+      intro: "The IRIS Lab team is developing an in-hand manipulation benchmark that evaluates how reliably policies reorient objects with the Allegro Hand.",
+      groups: [
+        ["Robot", "Allegro four-finger dexterous hand"],
+        ["Core skill", "In-hand object reorientation"],
+        ["Benchmark", "Object set, target orientations, and evaluation protocol in development"],
+      ],
+    },
+    facts: ["Allegro Hand", "In-hand reorientation", "In development"],
+    maintainers: [
+      { name: "Zhixian Xie", image: "/maintainer-zhixian-xie.jpeg", url: "https://zhi-xian-xie.github.io/" },
+      { name: "Wanxin Jin", image: "/maintainer-wanxin-jin.jpeg", url: "https://search.asu.edu/profile/4837210" },
+    ],
+    primary: ["Visit IRIS Lab", "https://irislab.tech/"],
+    secondary: ["Meet the team", "https://irislab.tech/people/"],
+  },
 ];
 
 const steps = [
@@ -272,9 +305,9 @@ export default function Home() {
               ))}
             </div>
             <div className="partnerMap">
-              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Five sites across the United States</b></p>
+              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Six sites across the United States</b></p>
               <div className="partnerMapIntro">
-                <p>Our current network includes five physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
+                <p>Our current network includes six physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
                 <a href="#build-a-site">Become a partner <Arrow /></a>
               </div>
               <div className="partnerMapCanvas">
@@ -288,7 +321,7 @@ export default function Home() {
                     </span>
                   </div>
                 ) : (
-                  <a className="mapMarker" href={site.hostUrl} key={site.host} style={site.mapPosition} target="_blank" rel="noreferrer" aria-label={`${site.shortHost}, ${site.location}`}>
+                  <a className={`mapMarker${["PRACTICE · UCLA", "GRILL · Cornell"].includes(site.shortHost) ? " labelLeft" : ""}`} href={site.hostUrl} key={site.host} style={site.mapPosition} target="_blank" rel="noreferrer" aria-label={`${site.shortHost}, ${site.location}`}>
                     <i aria-hidden="true" />
                     <span><b>{site.shortHost}</b><small>{site.location}</small></span>
                   </a>
@@ -335,7 +368,7 @@ export default function Home() {
       <section className="sites shell" id="sites">
         <div className="sectionHeading row">
           <div><p className="eyebrow">CURRENT SITES</p><h2>Start with the robot<br />you already <em>use.</em></h2></div>
-          <p>Five organizations are building the first RobotReplica sites. Each site operates its hardware, tasks, and evaluation process; RobotReplica maintains the verified robot-specific leaderboards.</p>
+          <p>Six organizations are building the first RobotReplica sites. Each site operates its hardware, tasks, and evaluation process; RobotReplica maintains the verified robot-specific leaderboards.</p>
         </div>
         <div className="siteStack">
           {sites.map((site) => (
