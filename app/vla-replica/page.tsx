@@ -53,7 +53,7 @@ export default function VLAReplicaPage() {
     <section className="vlaPaperSection vlaDemoSection" id="demonstrations"><div className="shell vlaSectionGrid"><div><p className="eyebrow">06 / EXPERT DEMONSTRATIONS</p><h2>Expert Demonstrations</h2><p>We provide 50 demonstrations for each task for training or fine-tuning.</p><a className="button primary" href="https://huggingface.co/datasets/HenryZhang/VLAReplica_SFT_data" target="_blank" rel="noreferrer">Download demonstration data <Arrow /></a></div><img src="/vla-replica-materials/assets/images/demonstrations.png" alt="Examples of expert demonstrations" /></div></section>
 
     <section className="vlaPaperSection shell" id="scenes">
-      <div className="vlaSectionHead"><p className="eyebrow">07 / TEST SCENES</p><h2>Test Scene Reference Images</h2><p>Ninety fixed reference scenes make physical evaluation repeatable. The first row of each image shows ID conditions and the second shows OOD conditions, except for tasks without an OOD variant.</p></div>
+      <div className="vlaSectionHead"><p className="eyebrow">07 / TEST SCENES</p><h2>Test Scene Reference Images</h2></div>
       <div className="vlaSceneGuide">
         <video controls preload="metadata" playsInline poster="/vla-replica-materials/assets/images/scene-reference-placement-poster.jpg">
           <source src="/vla-replica-materials/assets/videos/scene-reference-placement.mp4" type="video/mp4" />
@@ -61,6 +61,7 @@ export default function VLAReplicaPage() {
         </video>
         <div><p className="eyebrow">PLACEMENT GUIDE</p><h3>Match each test scene precisely.</h3><p>Use the corresponding reference image to reproduce the object positions and orientations before every evaluation rollout. This walkthrough demonstrates the placement process.</p></div>
       </div>
+      <p className="vlaSceneDescription">Ninety fixed reference scenes make physical evaluation repeatable. The first row of each image shows ID conditions and the second shows OOD conditions, except for tasks without an OOD variant.</p>
       <div className="vlaSceneGrid">{sceneNames.map((name, i) => <figure key={name}><img src={`/vla-replica-materials/assets/images/task${String(i + 1).padStart(2, "0")}.png`} alt={`Reference scenes for ${name}`} /><figcaption><span>{String(i + 1).padStart(2, "0")}</span>{name}</figcaption></figure>)}</div>
     </section>
 
