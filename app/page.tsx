@@ -209,6 +209,40 @@ const sites = [
     primary: ["Visit IRIS Lab", "https://irislab.tech/"],
     secondary: ["Meet the team", "https://irislab.tech/people/"],
   },
+  {
+    number: "SITE 07",
+    status: "In development",
+    host: "GRASP Laboratory @ University of Pennsylvania",
+    hostUrl: "https://www.grasp.upenn.edu/",
+    shortHost: "GRASP · Penn",
+    logo: "/logo-grasp-penn.svg",
+    location: "Philadelphia, Pennsylvania",
+    mapPosition: { left: "82%", top: "40%" },
+    robot: "Dual YAM Robots",
+    benchmark: "RobotReplica YAM bimanual site",
+    image: "/penn-grasp-yam-bimanual.webp",
+    imageAlt: "A pair of YAM robots configured for bimanual manipulation at Penn GRASP",
+    imageCredit: ["Image: Penn GRASP team", "https://www.grasp.upenn.edu/"],
+    description:
+      "A Penn-hosted pair of YAM robots for reproducible bimanual manipulation benchmarks.",
+    partnerRole: "Developing a dual-YAM site and a standardized suite of bimanual manipulation tasks.",
+    taskSummary: {
+      intro: "The Penn GRASP team is developing a benchmark that evaluates coordinated manipulation with a pair of YAM robots.",
+      groups: [
+        ["Robot", "Two YAM robot arms"],
+        ["Core skill", "Coordinated bimanual manipulation"],
+        ["Benchmark", "Task suite, scenes, and evaluation protocol in development"],
+      ],
+    },
+    facts: ["Two YAM robots", "Bimanual manipulation", "In development"],
+    maintainers: [
+      { name: "Tim Song", image: "/maintainer-tim-song.jpg", url: "https://timsong412.github.io/" },
+      { name: "Boshu Lei", image: "/maintainer-boshu-lei.png", url: "https://rpfey.github.io/" },
+      { name: "Kostas Daniilidis", image: "/maintainer-kostas-daniilidis.jpg", url: "https://www.grasp.upenn.edu/people/kostas-daniilidis/" },
+    ],
+    primary: ["Visit GRASP Lab", "https://www.grasp.upenn.edu/"],
+    secondary: ["Meet the team", "https://www.grasp.upenn.edu/people/"],
+  },
 ];
 
 const steps = [
@@ -299,6 +333,9 @@ export default function Home() {
                   ) : (
                     <a className="heroPartnerOrg" href={site.hostUrl} target="_blank" rel="noreferrer"><img src={site.logo} alt="" /><span><b>{site.shortHost}</b><small>{site.location}</small></span></a>
                   )}
+                  <a className="heroPartnerSite" href={`#site-${site.number.slice(-2)}`}>
+                    <span>{site.number}: {site.robot}</span><Arrow />
+                  </a>
                   <div className="heroPartnerPeople">{site.maintainers.map((person) => (
                     <a href={person.url} key={person.name} target="_blank" rel="noreferrer" title={person.name}><img src={person.image} alt={person.name} /><span>{person.name}</span></a>
                   ))}</div>
@@ -306,9 +343,9 @@ export default function Home() {
               ))}
             </div>
             <div className="partnerMap">
-              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Six sites across the United States</b></p>
+              <p><span>CURRENT ROBOTREPLICA SITES</span><b>Seven sites across the United States</b></p>
               <div className="partnerMapIntro">
-                <p>Our current network includes six physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
+                <p>Our current network includes seven physical benchmark sites. We welcome additional organizations, robot platforms, and evaluation sites to join RobotReplica.</p>
                 <a href="#build-a-site">Become a partner <Arrow /></a>
               </div>
               <div className="partnerMapCanvas">
@@ -322,7 +359,7 @@ export default function Home() {
                     </span>
                   </div>
                 ) : (
-                  <a className={`mapMarker${["PRACTICE · UCLA", "GRILL · Cornell"].includes(site.shortHost) ? " labelLeft" : ""}`} href={site.hostUrl} key={site.host} style={site.mapPosition} target="_blank" rel="noreferrer" aria-label={`${site.shortHost}, ${site.location}`}>
+                  <a className={`mapMarker${["PRACTICE · UCLA", "GRILL · Cornell", "GRASP · Penn"].includes(site.shortHost) ? " labelLeft" : ""}`} href={site.hostUrl} key={site.host} style={site.mapPosition} target="_blank" rel="noreferrer" aria-label={`${site.shortHost}, ${site.location}`}>
                     <i aria-hidden="true" />
                     <span><b>{site.shortHost}</b><small>{site.location}</small></span>
                   </a>
@@ -369,11 +406,11 @@ export default function Home() {
       <section className="sites shell" id="sites">
         <div className="sectionHeading row">
           <div><p className="eyebrow">CURRENT SITES</p><h2>Start with the robot<br />you already <em>use.</em></h2></div>
-          <p>Six organizations are building the first RobotReplica sites. Each site operates its hardware, tasks, and evaluation process; RobotReplica maintains the verified robot-specific leaderboards.</p>
+          <p>Seven organizations are building the first RobotReplica sites. Each site operates its hardware, tasks, and evaluation process; RobotReplica maintains the verified robot-specific leaderboards.</p>
         </div>
         <div className="siteStack">
           {sites.map((site) => (
-            <div className="siteEntry" key={site.robot}>
+            <div className="siteEntry" id={`site-${site.number.slice(-2)}`} key={site.robot}>
             <article className="siteCard">
               <div className={`siteImage${site.image ? " hasImage" : " siteIdentity"}`}>
                 {site.image ? <img src={site.image} alt={site.imageAlt} /> : <div><small>ROBOT</small><strong>SO-101</strong><small>INTELLIGENT ROBOTICS AND VISION LAB / UT DALLAS</small></div>}
