@@ -245,6 +245,15 @@ const sites = [
   },
 ];
 
+const steeringCommittee = [
+  { name: "Yu Xiang", organization: "IRVL · UT Dallas", image: "/maintainer-yu-xiang.jpg", url: "https://yuxng.github.io/" },
+  { name: "Shumo Chu", organization: "General Intelligence Labs", image: "/maintainer-shumo-chu.jpg", url: "https://www.shumochu.com/" },
+  { name: "Kuan Fang", organization: "GRILL · Cornell", image: "/maintainer-kuan-fang.jpg", url: "https://kuanfang.github.io/index.html" },
+  { name: "Anushri Dixit", organization: "PRACTICE Lab · UCLA", image: "/maintainer-anushri-dixit.png", url: "https://practice-lab-ucla.github.io/people/anushri_dixit/" },
+  { name: "Wanxin Jin", organization: "IRIS Lab · ASU", image: "/maintainer-wanxin-jin.jpeg", url: "https://search.asu.edu/profile/4837210" },
+  { name: "Kostas Daniilidis", organization: "GRASP Laboratory · Penn", image: "/maintainer-kostas-daniilidis.jpg", url: "https://www.grasp.upenn.edu/people/kostas-daniilidis/" },
+];
+
 const steps = [
   ["1", "Find your robot", "Choose a site that operates the same robot embodiment as your model or policy."],
   ["2", "Contact the site", "Share your policy, interface requirements, and the benchmark track you want to enter."],
@@ -341,6 +350,20 @@ export default function Home() {
                   ))}</div>
                 </article>
               ))}
+            </div>
+            <div className="steeringCompact">
+              <div className="steeringCompactIntro">
+                <b>FOUNDING STEERING COMMITTEE</b>
+                <span>Founding site leaders guiding benchmark standards, evaluation practices, and community growth.</span>
+              </div>
+              <div className="steeringCompactPeople">
+                {steeringCommittee.map((member) => (
+                  <a href={member.url} key={member.name} target="_blank" rel="noreferrer" title={`${member.name} · ${member.organization}`}>
+                    <img src={member.image} alt={member.name} />
+                    <span><b>{member.name}</b><small>{member.organization}</small></span>
+                  </a>
+                ))}
+              </div>
             </div>
             <div className="partnerMap">
               <p><span>CURRENT ROBOTREPLICA SITES</span><b>Seven sites across the United States</b></p>
