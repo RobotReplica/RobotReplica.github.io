@@ -29,6 +29,7 @@ const sites = [
     facts: ["SO-101 arm", "UT Dallas", "Accepting evaluations"],
     maintainers: [
       { name: "Alex S. Huang", image: "/maintainer-alex-huang.jpg", url: "https://alexhuang1029.github.io/" },
+      { name: "May Lynn Espinola", image: "/maintainer-may-lynn-espinola.jpg", url: "https://goldpig888.github.io/index.html" },
       { name: "Jiahui Zhang", image: "/maintainer-jiahui-zhang.png", url: "https://jiahui-3205.github.io/" },
       { name: "Yu Xiang", image: "/maintainer-yu-xiang.jpg", url: "https://yuxng.github.io/" },
     ],
