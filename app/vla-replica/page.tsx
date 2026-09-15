@@ -7,10 +7,10 @@ export const metadata: Metadata = {
 };
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
-const authors = [
-  ["Alex S. Huang*", "https://alexhuang1029.github.io/", "/vla-replica-materials/shared-assets/images/authors/alex_huang.webp"],
-  ["Jiahui Zhang*", "https://jiahui-3205.github.io/", "/vla-replica-materials/shared-assets/images/authors/jiahui_zhang.webp"],
-  ["Shiqing Tang", "https://openreview.net/profile?id=~Shiqing_Tang2", "/vla-replica-materials/shared-assets/images/authors/shiqing_tang.webp"],
+const maintainers = [
+  ["Alex S. Huang", "https://alexhuang1029.github.io/", "/vla-replica-materials/shared-assets/images/authors/alex_huang.webp"],
+  ["Jiahui Zhang", "https://jiahui-3205.github.io/", "/vla-replica-materials/shared-assets/images/authors/jiahui_zhang.webp"],
+  ["May Lynn Espinola", "https://goldpig888.github.io/index.html", "/maintainer-may-lynn-espinola.jpg"],
   ["Yu Xiang", "https://yuxng.github.io", "/vla-replica-materials/shared-assets/images/authors/yu_xiang.webp"],
 ];
 const quickLinks = [
@@ -48,8 +48,9 @@ export default function VLAReplicaPage() {
       <p className="kicker">ROBOTREPLICA / SITE 01 / SO-101</p>
       <h1>VLA-Replica</h1>
       <p className="vlaPaperTitle">A Low-Cost, Reproducible Benchmark for Real-World Evaluation of Vision-Language-Action Models</p>
-      <div className="vlaAuthors">{authors.map(([name, href, image]) => <a href={href} target="_blank" rel="noreferrer" key={name}><img src={image} alt={name.replace("*", "")} /><span>{name}</span></a>)}</div>
-      <p className="vlaAffiliation"><sup>*</sup> Equal contribution · <a href="https://labs.utdallas.edu/irvl" target="_blank" rel="noreferrer">Intelligent Robotics and Vision Lab at the University of Texas at Dallas</a></p>
+      <p className="vlaMaintainerLabel">SITE MAINTAINERS</p>
+      <div className="vlaAuthors">{maintainers.map(([name, href, image]) => <a href={href} target="_blank" rel="noreferrer" key={name}><img src={image} alt={name} /><span>{name}</span></a>)}</div>
+      <p className="vlaAffiliation"><a href="https://labs.utdallas.edu/irvl" target="_blank" rel="noreferrer">Intelligent Robotics and Vision Lab at the University of Texas at Dallas</a></p>
       <div className="vlaQuickLinks">{quickLinks.map(([label, href]) => <a href={href} key={label}>{label} <Arrow /></a>)}</div>
       <video className="vlaLeadVideo" controls autoPlay muted loop playsInline poster="/vla-replica-materials/assets/images/VLAReplica_overview.jpg"><source src="/vla-replica-materials/assets/videos/VLAReplica.mp4" type="video/mp4" /></video>
     </header>
