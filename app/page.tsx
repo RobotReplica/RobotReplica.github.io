@@ -272,8 +272,8 @@ const siteBuildingSteps = [
 
 const so101Leaders = [
   { policy: "π₀.₅", id: "54%", ood: "35%" },
+  { policy: "MolmoAct2", id: "46%", ood: "45%" },
   { policy: "π₀", id: "34%", ood: "30%" },
-  { policy: "SmolVLA", id: "26%", ood: "30%" },
 ];
 
 export default function Home() {
