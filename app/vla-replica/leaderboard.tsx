@@ -16,37 +16,38 @@ const methods = [
   { label: "X-VLA", ref: 4, slug: "x-vla" }, { label: "π₀", ref: 5, slug: "pi-0" },
   { label: "π₀.₅", ref: 6, slug: "pi-0-5" },
   { label: "MolmoAct2-SO100_101", ref: 7, slug: "molmoact2" },
+  { label: "GR00T1.7", ref: 8, slug: "groot1.7" },
 ];
 
 const data: Record<DatasetKey, LeaderboardDataset> = {
   id: {
-    average: [0.18, 0.16, 0.12, 0.26, 0.14, 0.34, 0.54, 0.46],
+    average: [0.18, 0.16, 0.12, 0.26, 0.14, 0.34, 0.54, 0.46, 0.34],
     groups: [
       { type: "Pick-and-Place", rows: [
-        ["Put bread on plate", .4, .4, .4, .6, .4, .8, .8, 1], ["Put bowl on coaster", 0, 0, 0, .2, .2, .6, .8, .8],
-        ["Stack block on block", 0, 0, 0, .2, 0, 0, .4, .4], ["Put all blocks into box", 0, .2, 0, 0, 0, 0, .4, .4],
+        ["Put bread on plate", .4, .4, .4, .6, .4, .8, .8, 1, .8], ["Put bowl on coaster", 0, 0, 0, .2, .2, .6, .8, .8, .8],
+        ["Stack block on block", 0, 0, 0, .2, 0, 0, .4, .4, 0], ["Put all blocks into box", 0, .2, 0, 0, 0, 0, .4, .4, .2],
       ]},
       { type: "Object Interaction", rows: [
-        ["Fold towel", .4, .2, .2, .6, .6, .8, 1, .6], ["Open oven", .4, .6, .4, .4, 0, .2, .6, .4],
-        ["Erase whiteboard", .2, .2, .2, .2, 0, .4, .4, .6],
+        ["Fold towel", .4, .2, .2, .6, .6, .8, 1, .6, 1], ["Open oven", .4, .6, .4, .4, 0, .2, .6, .4, .2],
+        ["Erase whiteboard", .2, .2, .2, .2, 0, .4, .4, .6, .2],
       ]},
       { type: "Counting / Memory", rows: [
-        ["Shake pepper n times", .2, 0, 0, 0, .2, .2, .4, .2], ["Lift bowl n times", .2, 0, 0, .2, 0, .2, .4, .2],
-        ["Press button n times", 0, 0, 0, .2, 0, .2, .2, 0],
+        ["Shake pepper n times", .2, 0, 0, 0, .2, .2, .4, .2, .2], ["Lift bowl n times", .2, 0, 0, .2, 0, .2, .4, .2, 0],
+        ["Press button n times", 0, 0, 0, .2, 0, .2, .2, 0, .2],
       ]},
     ],
   },
   ood: {
-    average: [.075, .05, .025, .3, .075, .3, .35, .45],
+    average: [.075, .05, .025, .3, .075, .3, .35, .45, .425],
     groups: [
       { type: "Pick-and-Place", rows: [
-        ["Put bread on plate", .4, 0, .2, .8, .6, .8, 1, .8], ["Put bowl on coaster", .2, .2, 0, .4, 0, .6, .4, 1],
-        ["Stack block on block", 0, 0, 0, .2, 0, .2, 0, .6], ["Put all blocks into box", 0, 0, 0, .2, 0, 0, .2, .2],
+        ["Put bread on plate", .4, 0, .2, .8, .6, .8, 1, .8, .8], ["Put bowl on coaster", .2, .2, 0, .4, 0, .6, .4, 1, 1],
+        ["Stack block on block", 0, 0, 0, .2, 0, .2, 0, .6, .6], ["Put all blocks into box", 0, 0, 0, .2, 0, 0, .2, .2, 0],
       ]},
-      { type: "Object Interaction", rows: [["Fold towel", 0, .2, 0, .6, 0, .6, .8, .8]] },
+      { type: "Object Interaction", rows: [["Fold towel", 0, .2, 0, .6, 0, .6, .8, .8, .8]] },
       { type: "Counting / Memory", rows: [
-        ["Shake pepper n times", 0, 0, 0, 0, 0, .2, .4, 0], ["Lift bowl n times", 0, 0, 0, .2, 0, 0, 0, .2],
-        ["Press button n times", 0, 0, 0, 0, 0, 0, 0, 0],
+        ["Shake pepper n times", 0, 0, 0, 0, 0, .2, .4, 0, 0], ["Lift bowl n times", 0, 0, 0, .2, 0, 0, 0, .2, .2],
+        ["Press button n times", 0, 0, 0, 0, 0, 0, 0, 0, 0],
       ]},
     ],
   },
