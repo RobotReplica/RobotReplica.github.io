@@ -21,7 +21,7 @@ const methods = [
 
 const data: Record<DatasetKey, LeaderboardDataset> = {
   id: {
-    average: [0.18, 0.16, 0.12, 0.26, 0.14, 0.34, 0.54, 0.46, 0.34],
+    average: [0.18, 0.16, 0.12, 0.26, 0.14, 0.34, 0.54, 0.46, 0.36],
     groups: [
       { type: "Pick-and-Place", rows: [
         ["Put bread on plate", .4, .4, .4, .6, .4, .8, .8, 1, .8], ["Put bowl on coaster", 0, 0, 0, .2, .2, .6, .8, .8, .8],
@@ -38,13 +38,13 @@ const data: Record<DatasetKey, LeaderboardDataset> = {
     ],
   },
   ood: {
-    average: [.075, .05, .025, .3, .075, .3, .35, .45, .425],
+    average: [.075, .05, .025, .3, .075, .3, .35, .45, .35],
     groups: [
       { type: "Pick-and-Place", rows: [
-        ["Put bread on plate", .4, 0, .2, .8, .6, .8, 1, .8, .8], ["Put bowl on coaster", .2, .2, 0, .4, 0, .6, .4, 1, 1],
-        ["Stack block on block", 0, 0, 0, .2, 0, .2, 0, .6, .6], ["Put all blocks into box", 0, 0, 0, .2, 0, 0, .2, .2, 0],
+        ["Put bread on plate", .4, 0, .2, .8, .6, .8, 1, .8, .8], ["Put bowl on coaster", .2, .2, 0, .4, 0, .6, .4, 1, .8],
+        ["Stack block on block", 0, 0, 0, .2, 0, .2, 0, .6, 0], ["Put all blocks into box", 0, 0, 0, .2, 0, 0, .2, .2, 0],
       ]},
-      { type: "Object Interaction", rows: [["Fold towel", 0, .2, 0, .6, 0, .6, .8, .8, .8]] },
+      { type: "Object Interaction", rows: [["Fold towel", 0, .2, 0, .6, 0, .6, .8, .8, 1]] },
       { type: "Counting / Memory", rows: [
         ["Shake pepper n times", 0, 0, 0, 0, 0, .2, .4, 0, 0], ["Lift bowl n times", 0, 0, 0, .2, 0, 0, 0, .2, .2],
         ["Press button n times", 0, 0, 0, 0, 0, 0, 0, 0, 0],
