@@ -271,9 +271,9 @@ const siteBuildingSteps = [
 ];
 
 const so101Leaders = [
-  { policy: "π₀.₅", id: "54%", ood: "35%" },
-  { policy: "MolmoAct2", id: "46%", ood: "45%" },
-  { policy: "π₀", id: "34%", ood: "30%" },
+  { policy: "π₀.₅", id: "53% ± 5%", ood: "39% ± 10%" },
+  { policy: "GR00T N1.7", id: "42% ± 6%", ood: "35% ± 0%" },
+  { policy: "MolmoAct2", id: "39% ± 6%", ood: "47% ± 5%" },
 ];
 
 export default function Home() {
@@ -486,7 +486,7 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
-                <div className="leaderboardFoot"><span>Top 3 · success rate · 5 runs per task</span><a className="button leaderboardButton" href="/vla-replica#leaderboard">View full leaderboard <Arrow /></a></div>
+                <div className="leaderboardFoot"><span>Top 3 · mean ± std · 3 rounds × 5 scenes</span><a className="button leaderboardButton" href="/vla-replica#leaderboard">View full leaderboard <Arrow /></a></div>
               </section>
             ) : null}
             </div>
