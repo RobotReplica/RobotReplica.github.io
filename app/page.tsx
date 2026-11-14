@@ -136,6 +136,7 @@ const sites = [
     facts: ["Franka Panda arm", "MIT CSAIL", "In development"],
     maintainers: [
       { name: "Zhiyang (Frank) Dou", image: "/maintainer-frank-dou.webp", url: "https://people.csail.mit.edu/frankzydou/" },
+      { name: "Anna Deng", image: "/maintainer-anna-deng.jpg", url: "https://annadeng8.github.io/" },
       { name: "Yuxiang Ma", image: "/maintainer-yuxiang-ma.png", url: "https://yuxiang-ma.github.io/" },
       { name: "Edward Adelson", image: "/maintainer-edward-adelson.png", url: "https://persci.mit.edu/people/adelson/" },
       { name: "Wojciech Matusik", image: "/maintainer-wojciech-matusik.jpg", url: "https://cdfg.mit.edu/wojciech" },
