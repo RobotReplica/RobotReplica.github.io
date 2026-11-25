@@ -245,6 +245,40 @@ const sites = [
     primary: ["Visit GRASP Lab", "https://www.grasp.upenn.edu/"],
     secondary: ["Meet the team", "https://www.grasp.upenn.edu/people/"],
   },
+  {
+    number: "SITE 08",
+    status: "In development",
+    host: "Embodied Minds Lab @ Harvard University",
+    hostUrl: "https://embodied-minds-lab.github.io/",
+    shortHost: "Embodied Minds · Harvard",
+    logo: "/logo-embodied-minds-harvard.svg",
+    location: "Cambridge, Massachusetts",
+    mapPosition: { left: "92%", top: "15%" },
+    robot: "Dual YAM Arms",
+    benchmark: "RobotReplica YAM bimanual site",
+    image: "/harvard-embodied-minds-dual-yam.webp",
+    imageAlt: "Dual YAM robot arms in the Embodied Minds Lab workspace at Harvard",
+    imageCredit: ["Image: Embodied Minds Lab at Harvard", "https://embodied-minds-lab.github.io/"],
+    description:
+      "A Harvard-hosted dual-YAM evaluation site for reproducible bimanual manipulation benchmarks.",
+    partnerRole: "Developing a dual-YAM site and a standardized suite of bimanual manipulation tasks.",
+    taskSummary: {
+      intro: "The Embodied Minds Lab team is developing a benchmark that evaluates coordinated manipulation with two YAM robot arms.",
+      groups: [
+        ["Robot", "Two YAM robot arms"],
+        ["Core skill", "Coordinated bimanual manipulation"],
+        ["Benchmark", "Task suite, scenes, and evaluation protocol in development"],
+      ],
+    },
+    facts: ["Two YAM arms", "Bimanual manipulation", "In development"],
+    maintainers: [
+      { name: "Haonan Chen", image: "/maintainer-haonan-chen.jpg", url: "https://haonan16.github.io/" },
+      { name: "Anna Mei", image: "/maintainer-anna-mei.jpg", url: "https://annamei1.github.io/" },
+      { name: "Yilun Du", image: "/maintainer-yilun-du.jpg", url: "https://yilundu.github.io/" },
+    ],
+    primary: ["Visit Embodied Minds Lab", "https://embodied-minds-lab.github.io/"],
+    secondary: ["Meet the team", "https://embodied-minds-lab.github.io/people/"],
+  },
 ];
 
 const steeringCommittee = [
@@ -384,7 +418,7 @@ export default function Home() {
                     </span>
                   </div>
                 ) : (
-                  <a className={`mapMarker${["PRACTICE · UCLA", "GRILL · Cornell", "GRASP · Penn"].includes(site.shortHost) ? " labelLeft" : ""}`} href={site.hostUrl} key={site.host} style={site.mapPosition} target="_blank" rel="noreferrer" aria-label={`${site.shortHost}, ${site.location}`}>
+                  <a className={`mapMarker${["PRACTICE · UCLA", "GRILL · Cornell", "GRASP · Penn", "Embodied Minds · Harvard"].includes(site.shortHost) ? " labelLeft" : ""}`} href={site.hostUrl} key={site.host} style={site.mapPosition} target="_blank" rel="noreferrer" aria-label={`${site.shortHost}, ${site.location}`}>
                     <i aria-hidden="true" />
                     <span><b>{site.shortHost}</b><small>{site.location}</small></span>
                   </a>

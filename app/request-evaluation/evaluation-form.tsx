@@ -10,6 +10,7 @@ const evaluationSites = [
   { robot: "AgileX PiPER", host: "PRACTICE Lab · UCLA", status: "In development · coming soon", available: false },
   { robot: "Allegro Hand", host: "IRIS Lab · ASU", status: "In development · coming soon", available: false },
   { robot: "Dual YAM Robots", host: "GRASP · University of Pennsylvania", status: "In development · coming soon", available: false },
+  { robot: "Dual YAM Arms", host: "Embodied Minds Lab · Harvard University", status: "In development · coming soon", available: false },
 ];
 
 export default function EvaluationForm() {
