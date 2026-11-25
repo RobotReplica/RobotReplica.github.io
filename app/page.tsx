@@ -253,7 +253,7 @@ const sites = [
     shortHost: "Embodied Minds · Harvard",
     logo: "/logo-embodied-minds-harvard.svg",
     location: "Cambridge, Massachusetts",
-    mapPosition: { left: "92%", top: "15%" },
+    mapPosition: { left: "88.5%", top: "22%" },
     robot: "Dual YAM Arms",
     benchmark: "RobotReplica YAM bimanual site",
     image: "/harvard-embodied-minds-dual-yam.webp",
@@ -418,7 +418,7 @@ export default function Home() {
                     </span>
                   </div>
                 ) : (
-                  <a className={`mapMarker${["PRACTICE · UCLA", "GRILL · Cornell", "GRASP · Penn", "Embodied Minds · Harvard"].includes(site.shortHost) ? " labelLeft" : ""}`} href={site.hostUrl} key={site.host} style={site.mapPosition} target="_blank" rel="noreferrer" aria-label={`${site.shortHost}, ${site.location}`}>
+                  <a className={`mapMarker${site.number === "SITE 08" ? " labelAbove" : ["PRACTICE · UCLA", "GRILL · Cornell", "GRASP · Penn"].includes(site.shortHost) ? " labelLeft" : ""}`} href={site.hostUrl} key={site.host} style={site.mapPosition} target="_blank" rel="noreferrer" aria-label={`${site.shortHost}, ${site.location}`}>
                     <i aria-hidden="true" />
                     <span><b>{site.shortHost}</b><small>{site.location}</small></span>
                   </a>

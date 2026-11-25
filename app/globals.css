@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 .mapMarker.labelLeft>span{left:auto;right:20px;text-align:right}
+.mapMarker.labelAbove>span{left:auto;right:20px;top:auto;bottom:24px;transform:none}
 
 :root{--navy:#102553;--navy2:#17366f;--blue:#315da8;--sky:#eaf2fb;--ink:#18202b;--muted:#66717f;--paper:#f7f8fa;--white:#fff;--coral:#ef654c;--line:#d8dee7;--green:#1c8b58;--gold:#9a6a18}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font-geist-sans),Arial,sans-serif}a{color:inherit;text-decoration:none}img{display:block}.shell{width:min(1280px,calc(100% - 56px));margin:auto}.nav{height:84px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:19px;font-weight:800;letter-spacing:-.7px;color:var(--navy);display:flex;align-items:center}.brand span{color:#8792a2}.brand i{width:12px;height:12px;border:3px solid var(--coral);border-radius:50%;margin-right:9px}.navLinks{display:flex;gap:32px;font-size:13px;color:#485365}.navLinks a:hover{color:var(--navy)}.navActions{display:flex;align-items:center;gap:9px}.navCta{padding:13px 21px;border:1px solid var(--navy);border-radius:7px;background:var(--navy);color:white;font-size:13px;font-weight:650}
